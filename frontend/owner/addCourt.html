@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Add Court</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <link rel="stylesheet" href="../css/owner.css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+<!---------------- SIDEBAR ---------------->
+
+<aside class="sidebar">
+
+    <h2>SportBook</h2>
+
+    <ul>
+
+        <li>
+            <a href="dashboard.html">
+                <i class="fa-solid fa-house"></i>
+                Dashboard
+            </a>
+        </li>
+
+        <li>
+            <a href="myCourts.html">
+                <i class="fa-solid fa-futbol"></i>
+                My Courts
+            </a>
+        </li>
+
+        <li class="active">
+            <a href="addCourt.html">
+                <i class="fa-solid fa-plus"></i>
+                Add Court
+            </a>
+        </li>
+
+        <li>
+            <a href="reservations.html">
+                <i class="fa-solid fa-calendar-check"></i>
+                Reservations
+            </a>
+        </li>
+
+        <li>
+            <a href="analytics.html">
+                <i class="fa-solid fa-chart-column"></i>
+                Analytics
+            </a>
+        </li>
+
+    </ul>
+
+</aside>
+
+<!---------------- MAIN ---------------->
+
+<main>
+
+<header class="topbar">
+
+<div class="search">
+<input type="text" placeholder="Search...">
+</div>
+
+<div class="top-right">
+
+<i class="fa-regular fa-bell"></i>
+
+<div class="profile">
+
+<img src="empty" alt="Profile">
+
+<span>John Smith</span>
+
+</div>
+
+</div>
+
+</header>
+
+<section class="page-title">
+
+<h1>Add New Court</h1>
+
+<p>Create a new sports facility.</p>
+
+</section>
+
+<form class="court-form">
+
+<!---------------- BASIC INFO ---------------->
+
+<div class="form-section">
+
+<h2>Basic Information</h2>
+
+<div class="form-grid">
+
+<div>
+
+<label>Court Name</label>
+
+<input
+type="text"
+placeholder="Example: Football Field A">
+
+</div>
+
+<div>
+
+<label>Sport Type</label>
+
+<select>
+
+<option>Football</option>
+<option>Padel</option>
+<option>Tennis</option>
+<option>Basketball</option>
+<option>Volleyball</option>
+
+</select>
+
+</div>
+
+<div>
+
+<label>Price Per Hour ($)</label>
+
+<input type="number">
+
+</div>
+
+<div>
+
+<label>Maximum Players</label>
+
+<input type="number">
+
+</div>
+
+</div>
+
+</div>
+
+<!---------------- LOCATION ---------------->
+
+<div class="form-section">
+
+<h2>Location</h2>
+
+<input
+type="text"
+placeholder="Street Address">
+
+<input
+type="text"
+placeholder="City">
+
+<input
+type="text"
+placeholder="Google Maps Link">
+
+</div>
+
+<!---------------- AVAILABILITY ---------------->
+
+<div class="form-section">
+
+<h2>Availability</h2>
+
+<div class="checkbox-grid">
+
+<label><input type="checkbox"> Saturday</label>
+<label><input type="checkbox"> Sunday</label>
+<label><input type="checkbox"> Monday</label>
+<label><input type="checkbox"> Tuesday</label>
+<label><input type="checkbox"> Wednesday</label>
+<label><input type="checkbox"> Thursday</label>
+<label><input type="checkbox"> Friday</label>
+
+</div>
+
+<div class="time-grid">
+
+<div>
+
+<label>Opening Time</label>
+
+<input type="time">
+
+</div>
+
+<div>
+
+<label>Closing Time</label>
+
+<input type="time">
+
+</div>
+
+</div>
+
+</div>
+
+<!---------------- AMENITIES ---------------->
+
+<div class="form-section">
+
+<h2>Amenities</h2>
+
+<div class="checkbox-grid">
+
+<label><input type="checkbox"> Parking</label>
+
+<label><input type="checkbox"> Locker Rooms</label>
+
+<label><input type="checkbox"> Showers</label>
+
+<label><input type="checkbox"> Cafeteria</label>
+
+<label><input type="checkbox"> Wi-Fi</label>
+
+<label><input type="checkbox"> Flood Lights</label>
+
+<label><input type="checkbox"> Equipment Rental</label>
+
+<label><input type="checkbox"> Air Conditioning</label>
+
+</div>
+
+</div>
+
+<!---------------- COURT TYPE ---------------->
+
+<div class="form-section">
+
+<h2>Court Type</h2>
+
+<label>
+
+<input type="radio" name="type">
+
+Indoor
+
+</label>
+
+<label>
+
+<input type="radio" name="type">
+
+Outdoor
+
+</label>
+
+</div>
+
+<!---------------- DESCRIPTION ---------------->
+
+<div class="form-section">
+
+<h2>Description</h2>
+
+<textarea rows="6"
+placeholder="Write a detailed description of your sports facility..."></textarea>
+
+</div>
+
+<!---------------- IMAGE ---------------->
+
+<div class="upload-box" id="dropArea">
+
+    <i class="fa-solid fa-cloud-arrow-up"></i>
+
+    <h3>Upload Court Images</h3>
+
+    <p>Drag & Drop images here or click to browse</p>
+
+    <input
+        type="file"
+        id="courtImages"
+        accept="image/*"
+        multiple
+        hidden>
+
+    <button
+        type="button"
+        class="btn btn-primary"
+        id="browseImages">
+        Choose Images
+    </button>
+
+    <div id="imagePreview" class="image-preview"></div>
+
+</div>
+<!---------------- WEATHER ---------------->
+
+<div class="form-section">
+
+<h2>Weather Integration</h2>
+
+<label>
+
+<input type="checkbox">
+
+Enable weather notifications for outdoor bookings.
+
+</label>
+
+</div>
+
+<!---------------- DYNAMIC PRICING ---------------->
+
+<div class="form-section">
+
+<h2>Dynamic Pricing</h2>
+
+<label>
+
+<input type="checkbox">
+
+Enable dynamic pricing during peak hours.
+
+</label>
+
+</div>
+
+<!---------------- BUTTONS ---------------->
+
+<div class="button-group">
+
+<button type="submit">
+
+<i class="fa-solid fa-circle-check"></i>
+
+Save Court
+
+</button>
+
+<button type="reset">
+
+<i class="fa-solid fa-arrow-rotate-left"></i>
+
+Reset
+
+</button>
+
+</div>
+
+</form>
+
+</main>
+
+</div>
+
+<div id="toast" class="toast"></div>
+<script src="../js/app.js"></script>
+<script src="../js/courts.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Edit Court</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <link rel="stylesheet" href="../css/owner.css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+<!-- ================= Sidebar ================= -->
+
+<aside class="sidebar">
+
+    <h2>SportBook</h2>
+
+    <ul>
+
+        <li>
+            <a href="dashboard.html">
+                <i class="fa-solid fa-house"></i>
+                Dashboard
+            </a>
+        </li>
+
+        <li>
+            <a href="myCourts.html">
+                <i class="fa-solid fa-futbol"></i>
+                My Courts
+            </a>
+        </li>
+
+        <li>
+            <a href="addCourt.html">
+                <i class="fa-solid fa-plus"></i>
+                Add Court
+            </a>
+        </li>
+
+        <li>
+            <a href="reservations.html">
+                <i class="fa-solid fa-calendar-check"></i>
+                Reservations
+            </a>
+        </li>
+
+        <li>
+            <a href="analytics.html">
+                <i class="fa-solid fa-chart-column"></i>
+                Analytics
+            </a>
+        </li>
+
+    </ul>
+
+</aside>
+
+<!-- ================= Main ================= -->
+
+<main>
+
+<header class="topbar">
+
+<div class="search">
+<input type="text" placeholder="Search...">
+</div>
+
+<div class="top-right">
+
+<i class="fa-regular fa-bell"></i>
+
+<div class="profile">
+
+<img src="empty" alt="Profile">
+
+<span>John Smith</span>
+
+</div>
+
+</div>
+
+</header>
+
+<!-- ================= Page Title ================= -->
+
+<section class="page-title">
+
+<h1>Edit Court</h1>
+
+<p>Update your facility information.</p>
+
+</section>
+
+<!-- ================= Court Summary ================= -->
+
+<section class="court-summary">
+
+<div class="court-image">
+
+<img src="empty" alt="Football Field">
+
+</div>
+
+<div class="court-details">
+
+<h2>Football Field A</h2>
+
+<p><i class="fa-solid fa-location-dot"></i> Cairo Sports Club</p>
+
+<p><i class="fa-solid fa-money-bill-wave"></i> $60 / Hour</p>
+
+<p><i class="fa-solid fa-calendar-check"></i> 412 Total Reservations</p>
+
+<p><i class="fa-solid fa-star"></i> Rating: 4.9 / 5</p>
+
+<p><i class="fa-solid fa-clock"></i> Last Updated: 15 July 2026</p>
+
+</div>
+
+</section>
+
+<!-- ================= Edit Form ================= -->
+
+<form class="court-form">
+
+<div class="form-section">
+
+<h2>Basic Information</h2>
+
+<div class="form-grid">
+
+<div>
+
+<label>Court Name</label>
+
+<input
+type="text"
+value="Football Field A">
+
+</div>
+
+<div>
+
+<label>Sport Type</label>
+
+<select>
+
+<option selected>Football</option>
+<option>Padel</option>
+<option>Tennis</option>
+<option>Basketball</option>
+
+</select>
+
+</div>
+
+<div>
+
+<label>Price Per Hour</label>
+
+<input
+type="number"
+value="60">
+
+</div>
+
+<div>
+
+<label>Maximum Players</label>
+
+<input
+type="number"
+value="22">
+
+</div>
+
+</div>
+
+</div>
+
+<!-- ================= Availability ================= -->
+
+<div class="form-section">
+
+<h2>Court Status</h2>
+
+<label>
+
+<input type="radio" name="status" checked>
+
+Available
+
+</label>
+
+<label>
+
+<input type="radio" name="status">
+
+Maintenance
+
+</label>
+
+<label>
+
+<input type="radio" name="status">
+
+Unavailable
+
+</label>
+
+</div>
+
+<!-- ================= Schedule ================= -->
+
+<div class="form-section">
+
+<h2>Opening Hours</h2>
+
+<div class="time-grid">
+
+<div>
+
+<label>Opening</label>
+
+<input type="time" value="09:00">
+
+</div>
+
+<div>
+
+<label>Closing</label>
+
+<input type="time" value="23:00">
+
+</div>
+
+</div>
+
+</div>
+
+<!-- ================= Amenities ================= -->
+
+<div class="form-section">
+
+<h2>Amenities</h2>
+
+<div class="checkbox-grid">
+
+<label><input type="checkbox" checked> Parking</label>
+
+<label><input type="checkbox" checked> Showers</label>
+
+<label><input type="checkbox"> Wi-Fi</label>
+
+<label><input type="checkbox" checked> Flood Lights</label>
+
+<label><input type="checkbox"> Equipment Rental</label>
+
+<label><input type="checkbox"> Lockers</label>
+
+<label><input type="checkbox"> Cafeteria</label>
+
+<label><input type="checkbox"> Air Conditioning</label>
+
+</div>
+
+</div>
+
+<!-- ================= QR ================= -->
+
+<div class="form-section">
+
+<h2>QR Check-in</h2>
+
+<label>
+
+<input type="checkbox" checked>
+
+Enable QR Code Check-in
+
+</label>
+
+</div>
+
+<!-- ================= Weather ================= -->
+
+<div class="form-section">
+
+<h2>Weather Alerts</h2>
+
+<label>
+
+<input type="checkbox" checked>
+
+Notify customers if weather conditions affect outdoor bookings.
+
+</label>
+
+</div>
+
+<!-- ================= Description ================= -->
+
+<div class="form-section">
+
+<h2>Description</h2>
+
+<textarea rows="6">
+
+Professional football field with FIFA-standard artificial grass, LED floodlights, changing rooms and parking.
+
+</textarea>
+
+</div>
+
+<!-- ================= Image ================= -->
+
+<div class="form-section">
+
+<h2>Replace Images</h2>
+
+<div class="upload-box" id="dropArea">
+
+<i class="fa-solid fa-cloud-arrow-up"></i>
+
+<h3>Upload Court Images</h3>
+
+<p>Drag & Drop images here or click to browse</p>
+
+<input
+    type="file"
+    id="courtImages"
+    accept="image/*"
+    multiple
+    hidden>
+
+<button
+    type="button"
+    class="btn btn-primary"
+    id="browseImages">
+    Choose Images
+</button>
+
+<div id="imagePreview" class="image-preview"></div>
+
+</div>
+
+</div>
+
+<!-- ================= Statistics ================= -->
+
+<div class="form-section">
+
+<h2>Performance</h2>
+
+<ul>
+
+<li>Total Reservations : 412</li>
+
+<li>Monthly Revenue : $6,820</li>
+
+<li>Average Rating : 4.9</li>
+
+<li>Peak Hours : 7 PM - 10 PM</li>
+
+</ul>
+
+</div>
+
+<!-- ================= Buttons ================= -->
+
+<div class="button-group">
+
+<button type="submit">
+
+<i class="fa-solid fa-floppy-disk"></i>
+
+Save Changes
+
+</button>
+
+<button type="button">
+
+<i class="fa-solid fa-trash"></i>
+
+Delete Court
+
+</button>
+
+<button type="reset">
+
+<i class="fa-solid fa-arrow-rotate-left"></i>
+
+Discard Changes
+
+</button>
+
+</div>
+
+</form>
+
+</main>
+
+</div>
+
+<div id="toast" class="toast"></div>
+<script src="../js/app.js"></script>
+<script src="../js/courts.js"></script>
+
+</body>
+
+</html>

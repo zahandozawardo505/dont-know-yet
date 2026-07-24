@@ -1,0 +1,17 @@
+/* ============================================================
+   main style.css — PlayZone Master CSS Entry Point
+   Imports the full modular CSS architecture in dependency order.
+   All HTML pages that linked to this file will automatically
+   receive all new styles without changing their <link> tags.
+   ============================================================ */
+
+@import url('./main.css');
+@import url('./themes.css');
+@import url('./animations.css');
+@import url('./navbar.css');
+@import url('./hero.css');
+@import url('./components.css');
+@import url('./dashboard.css');
+@import url('./forms.css');
+@import url('./footer.css');
+@import url('./responsive.css');

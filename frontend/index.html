@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PlayZone | Premium Sports Court Concierge</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="./css/main style.css" />
+</head>
+
+<body class="bg-page-bg text-ink font-sans">
+  <!-- making sure it works -->
+  <!-- ===== HEADER / NAVBAR ===== -->
+  <header
+    class="fixed top-0 w-full z-50 bg-white/80 dark:bg-page-dark/80 backdrop-blur-md border-b border-white/30 shadow-sm">
+    <div class="flex justify-between items-center px-16 max-w-content mx-auto h-20">
+
+      <!-- Logo -->
+      <div class="flex items-center gap-2">
+        <span class="text-2xl font-extrabold text-accent dark:text-accent-soft">PlayZone</span>
+      </div>
+
+      <!-- Nav links -->
+      <nav class="hidden md:flex gap-8 items-center">
+        <a class="text-accent font-bold border-b-2 border-accent pb-1 text-sm" href="#">Venues</a>
+        <a class="text-ink-muted hover:text-accent transition-colors text-sm" href="#">Leagues</a>
+        <a class="text-ink-muted hover:text-accent transition-colors text-sm" href="#">Community</a>
+      </nav>
+
+      <!-- Auth buttons -->
+      <div class="flex items-center gap-3">
+        <button
+          class="text-ink-muted hover:text-accent transition-colors text-sm font-semibold px-4 py-2">Login</button>
+        <button
+          class="bg-black text-white hover:opacity-90 hover:scale-[1.02] transition-all duration-200 px-6 py-2 rounded-lg text-sm font-semibold">Sign
+          Up</button>
+      </div>
+
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ===== SPORT FILTER BAR ===== -->
+    <div class="mt-20 glass-card sticky top-20 z-40 py-4 shadow-sm">
+      <div class="max-w-content mx-auto px-16 overflow-x-auto">
+        <div class="flex justify-between items-center min-w-max gap-8">
+
+          <button
+            class="flex items-center gap-2 text-accent text-sm font-semibold bg-accent/10 px-4 py-2 rounded-full transition-all">
+            <span class="material-symbols-outlined">sports_soccer</span> Football
+          </button>
+          <button class="flex items-center gap-2 text-ink-muted hover:text-accent text-sm font-semibold transition-all">
+            <span class="material-symbols-outlined">sports_tennis</span> Tennis
+          </button>
+          <button class="flex items-center gap-2 text-ink-muted hover:text-accent text-sm font-semibold transition-all">
+            <span class="material-symbols-outlined">sports_tennis</span> Padel
+          </button>
+          <button class="flex items-center gap-2 text-ink-muted hover:text-accent text-sm font-semibold transition-all">
+            <span class="material-symbols-outlined">sports_basketball</span> Basketball
+          </button>
+          <button class="flex items-center gap-2 text-ink-muted hover:text-accent text-sm font-semibold transition-all">
+            <span class="material-symbols-outlined">sports_volleyball</span> Volleyball
+          </button>
+          <button class="flex items-center gap-2 text-ink-muted hover:text-accent text-sm font-semibold transition-all">
+            <span class="material-symbols-outlined">badminton</span> Badminton
+          </button>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== HERO ===== -->
+    <section class="relative h-[870px] w-full overflow-hidden">
+
+      <!-- Background image + overlay -->
+      <div class="absolute inset-0 z-0">
+        <div class="w-full h-full bg-cover bg-center" style="background-image: url('empty')">
+        </div>
+        <div class="absolute inset-0 bg-black/60"></div>
+      </div>
+
+      <!-- Hero text -->
+      <div class="relative z-10 h-full flex flex-col justify-center items-center text-center px-5">
+        <h1 class="text-4xl md:text-6xl font-extrabold text-white mb-4">Find. Book. Play.</h1>
+        <p class="text-lg text-white/90 max-w-2xl mb-12">
+          Discover and book premium sports courts in seconds. Your journey to the next game starts here.
+        </p>
+        <div class="flex flex-col md:flex-row gap-4">
+          <button
+            class="bg-accent text-white px-10 py-4 rounded-lg text-xl font-bold hover:scale-[1.05] transition-all duration-300">Explore
+            Courts</button>
+          <button
+            class="border-2 border-white text-white px-10 py-4 rounded-lg text-xl font-bold hover:bg-white/10 transition-all">Become
+            a Court Owner</button>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ===== SPORT CARDS GRID ===== -->
+    <section class="py-24 px-16 max-w-content mx-auto">
+      <h2 class="text-3xl font-bold mb-12">Choose Your Arena</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+        <!-- Football -->
+        <div
+          class="glass-card p-2 rounded-xl group overflow-hidden cursor-pointer hover:shadow-xl transition-all duration-500">
+          <div class="h-48 w-full rounded-lg bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
+            style="background-image: url('empty')">
+          </div>
+          <div class="mt-4 p-4">
+            <div class="flex items-center gap-2 text-accent mb-2">
+              <span class="material-symbols-outlined">sports_soccer</span>
+              <span class="text-sm font-semibold uppercase tracking-widest">Football</span>
+            </div>
+            <p class="text-base text-ink-muted mb-6">World-class pitches for 5v5 or full-sized competitive games.</p>
+            <button
+              class="w-full border border-line-strong hover:bg-black hover:text-white py-2 rounded-lg transition-colors text-sm font-semibold">Explore</button>
+          </div>
+        </div>
+
+        <!-- Tennis -->
+        <div
+          class="glass-card p-2 rounded-xl group overflow-hidden cursor-pointer hover:shadow-xl transition-all duration-500">
+          <div class="h-48 w-full rounded-lg bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
+            style="background-image: url('empty')">
+          </div>
+          <div class="mt-4 p-4">
+            <div class="flex items-center gap-2 text-accent mb-2">
+              <span class="material-symbols-outlined">sports_tennis</span>
+              <span class="text-sm font-semibold uppercase tracking-widest">Tennis</span>
+            </div>
+            <p class="text-base text-ink-muted mb-6">Premium clay and hard courts with professional lighting.</p>
+            <button
+              class="w-full border border-line-strong hover:bg-black hover:text-white py-2 rounded-lg transition-colors text-sm font-semibold">Explore</button>
+          </div>
+        </div>
+
+        <!-- Padel -->
+        <div
+          class="glass-card p-2 rounded-xl group overflow-hidden cursor-pointer hover:shadow-xl transition-all duration-500">
+          <div class="h-48 w-full rounded-lg bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
+            style="background-image: url('empty')">
+          </div>
+          <div class="mt-4 p-4">
+            <div class="flex items-center gap-2 text-accent mb-2">
+              <span class="material-symbols-outlined">sports_tennis</span>
+              <span class="text-sm font-semibold uppercase tracking-widest">Padel</span>
+            </div>
+            <p class="text-base text-ink-muted mb-6">Experience the trendiest sport in top-tier glass-walled arenas.</p>
+            <button
+              class="w-full border border-line-strong hover:bg-black hover:text-white py-2 rounded-lg transition-colors text-sm font-semibold">Explore</button>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ===== TOP RATED VENUES ===== -->
+    <section class="py-24 bg-surface-alt">
+      <div class="max-w-content mx-auto px-16">
+
+        <div class="flex justify-between items-end mb-12">
+          <div>
+            <h2 class="text-3xl font-bold">Top Rated Venues</h2>
+            <p class="text-ink-muted mt-1">The most booked arenas this month</p>
+          </div>
+          <button class="text-accent text-sm font-semibold flex items-center gap-1 hover:underline">
+            View All <span class="material-symbols-outlined">arrow_forward</span>
+          </button>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+          <!-- Venue Card 1 -->
+          <div class="bg-white rounded-xl shadow-sm border border-line/30 overflow-hidden group">
+            <div class="relative h-64">
+              <div class="w-full h-full bg-cover bg-center" style="background-image: url('empty')">
+              </div>
+              <span class="absolute top-4 left-4 bg-black text-white text-xs px-3 py-1 rounded-full">Padel</span>
+              <button
+                class="absolute top-4 right-4 bg-white/20 backdrop-blur-md p-2 rounded-full text-white hover:bg-white/40 transition-all">
+                <span class="material-symbols-outlined">favorite</span>
+              </button>
+            </div>
+            <div class="p-6">
+              <div class="flex justify-between items-start mb-2">
+                <h3 class="text-xl font-bold">The Stadium Padel</h3>
+                <div class="flex items-center gap-1 text-accent">
+                  <span class="material-symbols-outlined text-[18px]"
+                    style="font-variation-settings: 'FILL' 1;">star</span>
+                  <span class="text-sm font-semibold">4.9</span>
+                </div>
+              </div>
+              <p class="text-ink-muted flex items-center gap-1 mb-6">
+                <span class="material-symbols-outlined text-[18px]">location_on</span> Dubai Marina, UAE
+              </p>
+              <div class="flex justify-between items-center pt-4 border-t border-line/30">
+                <div>
+                  <span class="text-xl font-bold">$25</span>
+                  <span class="text-ink-muted text-xs">/ hr</span>
+                </div>
+                <button
+                  class="bg-accent text-white px-6 py-2 rounded-lg text-sm font-semibold hover:scale-[1.05] transition-all">Book
+                  Now</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Venue Card 2 -->
+          <div class="bg-white rounded-xl shadow-sm border border-line/30 overflow-hidden group">
+            <div class="relative h-64">
+              <div class="w-full h-full bg-cover bg-center" style="background-image: url('empty')">
+              </div>
+              <span class="absolute top-4 left-4 bg-black text-white text-xs px-3 py-1 rounded-full">Tennis</span>
+              <button
+                class="absolute top-4 right-4 bg-white/20 backdrop-blur-md p-2 rounded-full text-white hover:bg-white/40 transition-all">
+                <span class="material-symbols-outlined">favorite</span>
+              </button>
+            </div>
+            <div class="p-6">
+              <div class="flex justify-between items-start mb-2">
+                <h3 class="text-xl font-bold">Skyline Tennis Hub</h3>
+                <div class="flex items-center gap-1 text-accent">
+                  <span class="material-symbols-outlined text-[18px]"
+                    style="font-variation-settings: 'FILL' 1;">star</span>
+                  <span class="text-sm font-semibold">4.8</span>
+                </div>
+              </div>
+              <p class="text-ink-muted flex items-center gap-1 mb-6">
+                <span class="material-symbols-outlined text-[18px]">location_on</span> Midtown NYC, USA
+              </p>
+              <div class="flex justify-between items-center pt-4 border-t border-line/30">
+                <div>
+                  <span class="text-xl font-bold">$45</span>
+                  <span class="text-ink-muted text-xs">/ hr</span>
+                </div>
+                <button
+                  class="bg-accent text-white px-6 py-2 rounded-lg text-sm font-semibold hover:scale-[1.05] transition-all">Book
+                  Now</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Venue Card 3 -->
+          <div class="bg-white rounded-xl shadow-sm border border-line/30 overflow-hidden group">
+            <div class="relative h-64">
+              <div class="w-full h-full bg-cover bg-center" style="background-image: url('empty')">
+              </div>
+              <span class="absolute top-4 left-4 bg-black text-white text-xs px-3 py-1 rounded-full">Basketball</span>
+              <button
+                class="absolute top-4 right-4 bg-white/20 backdrop-blur-md p-2 rounded-full text-white hover:bg-white/40 transition-all">
+                <span class="material-symbols-outlined">favorite</span>
+              </button>
+            </div>
+            <div class="p-6">
+              <div class="flex justify-between items-start mb-2">
+                <h3 class="text-xl font-bold">The Arena Central</h3>
+                <div class="flex items-center gap-1 text-accent">
+                  <span class="material-symbols-outlined text-[18px]"
+                    style="font-variation-settings: 'FILL' 1;">star</span>
+                  <span class="text-sm font-semibold">5.0</span>
+                </div>
+              </div>
+              <p class="text-ink-muted flex items-center gap-1 mb-6">
+                <span class="material-symbols-outlined text-[18px]">location_on</span> London City, UK
+              </p>
+              <div class="flex justify-between items-center pt-4 border-t border-line/30">
+                <div>
+                  <span class="text-xl font-bold">$30</span>
+                  <span class="text-ink-muted text-xs">/ hr</span>
+                </div>
+                <button
+                  class="bg-accent text-white px-6 py-2 rounded-lg text-sm font-semibold hover:scale-[1.05] transition-all">Book
+                  Now</button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== JOIN A MATCH ===== -->
+    <section class="py-24 px-16 max-w-content mx-auto">
+      <div class="flex flex-col md:flex-row justify-between items-center mb-12 gap-6">
+        <h2 class="text-3xl font-bold">Join a Match</h2>
+        <div class="flex gap-4">
+          <button class="bg-white border border-line-strong px-4 py-2 rounded-full text-sm font-semibold">All
+            Sports</button>
+          <button class="bg-black text-white px-4 py-2 rounded-full text-sm font-semibold">Nearby</button>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+        <!-- Match Card 1 -->
+        <div class="glass-card p-6 rounded-xl hover:shadow-lg transition-all">
+          <div class="flex justify-between items-start mb-4">
+            <div class="bg-accent/10 text-accent px-3 py-1 rounded-md text-xs font-semibold">Football</div>
+            <div class="text-ink-muted text-xs">Oct 24 • 18:00</div>
+          </div>
+          <h4 class="text-xl font-bold mb-1">Dubai Sports City</h4>
+          <p class="text-ink-muted mb-6">Level: Intermediate</p>
+          <div class="flex -space-x-3 mb-6">
+            <div
+              class="w-10 h-10 rounded-full border-2 border-white bg-slate-200 flex items-center justify-center text-xs font-bold">
+              JD</div>
+            <div
+              class="w-10 h-10 rounded-full border-2 border-white bg-slate-300 flex items-center justify-center text-xs font-bold">
+              AK</div>
+            <div
+              class="w-10 h-10 rounded-full border-2 border-white bg-slate-400 flex items-center justify-center text-xs font-bold">
+              MS</div>
+            <div
+              class="w-10 h-10 rounded-full border-2 border-white bg-accent/20 text-accent flex items-center justify-center text-xs font-bold">
+              +3</div>
+          </div>
+          <div class="flex items-center justify-between">
+            <span class="text-ink-muted text-xs italic">3 spots left</span>
+            <button class="text-accent text-sm font-semibold hover:underline">Join Match</button>
+          </div>
+        </div>
+
+        <!-- Match Card 2 -->
+        <div class="glass-card p-6 rounded-xl hover:shadow-lg transition-all">
+          <div class="flex justify-between items-start mb-4">
+            <div class="bg-accent/10 text-accent px-3 py-1 rounded-md text-xs font-semibold">Tennis</div>
+            <div class="text-ink-muted text-xs">Oct 25 • 09:00</div>
+          </div>
+          <h4 class="text-xl font-bold mb-1">Rooftop Courts</h4>
+          <p class="text-ink-muted mb-6">Level: Advanced</p>
+          <div class="flex -space-x-3 mb-6">
+            <div
+              class="w-10 h-10 rounded-full border-2 border-white bg-slate-200 flex items-center justify-center text-xs font-bold">
+              RL</div>
+            <div
+              class="w-10 h-10 rounded-full border-2 border-white bg-accent/20 text-accent flex items-center justify-center text-xs font-bold">
+              +1</div>
+          </div>
+          <div class="flex items-center justify-between">
+            <span class="text-ink-muted text-xs italic">1 spot left</span>
+            <button class="text-accent text-sm font-semibold hover:underline">Join Match</button>
+          </div>
+        </div>
+
+        <!-- Match Card 3 -->
+        <div class="glass-card p-6 rounded-xl hover:shadow-lg transition-all">
+          <div class="flex justify-between items-start mb-4">
+            <div class="bg-accent/10 text-accent px-3 py-1 rounded-md text-xs font-semibold">Basketball</div>
+            <div class="text-ink-muted text-xs">Oct 25 • 20:30</div>
+          </div>
+          <h4 class="text-xl font-bold mb-1">Central Arena</h4>
+          <p class="text-ink-muted mb-6">Level: Beginner Friendly</p>
+          <div class="flex -space-x-3 mb-6">
+            <div
+              class="w-10 h-10 rounded-full border-2 border-white bg-slate-200 flex items-center justify-center text-xs font-bold">
+              BK</div>
+            <div
+              class="w-10 h-10 rounded-full border-2 border-white bg-slate-300 flex items-center justify-center text-xs font-bold">
+              TH</div>
+            <div
+              class="w-10 h-10 rounded-full border-2 border-white bg-accent/20 text-accent flex items-center justify-center text-xs font-bold">
+              +5</div>
+          </div>
+          <div class="flex items-center justify-between">
+            <span class="text-ink-muted text-xs italic">5 spots left</span>
+            <button class="text-accent text-sm font-semibold hover:underline">Join Match</button>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ===== HOW IT WORKS ===== -->
+    <section class="py-32 bg-black text-white text-center">
+      <div class="max-w-content mx-auto px-16">
+        <h2 class="text-4xl md:text-6xl font-extrabold mb-20">Three Steps to Game Day</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-16">
+
+          <div class="flex flex-col items-center">
+            <div class="w-20 h-20 bg-accent rounded-2xl flex items-center justify-center mb-8 rotate-3">
+              <span class="material-symbols-outlined text-[40px]">search</span>
+            </div>
+            <h3 class="text-2xl font-bold mb-4">Search</h3>
+            <p class="text-white/70">Find the perfect court based on your sport, location, and preferred time.</p>
+          </div>
+
+          <div class="flex flex-col items-center">
+            <div class="w-20 h-20 bg-accent rounded-2xl flex items-center justify-center mb-8 -rotate-6">
+              <span class="material-symbols-outlined text-[40px]">event_available</span>
+            </div>
+            <h3 class="text-2xl font-bold mb-4">Book</h3>
+            <p class="text-white/70">Secure your slot instantly with our seamless, secure reservation system.</p>
+          </div>
+
+          <div class="flex flex-col items-center">
+            <div class="w-20 h-20 bg-accent rounded-2xl flex items-center justify-center mb-8 rotate-12">
+              <span class="material-symbols-outlined text-[40px]">sports_soccer</span>
+            </div>
+            <h3 class="text-2xl font-bold mb-4">Play</h3>
+            <p class="text-white/70">Show up, scan your digital pass, and enjoy your game without the hassle.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== WHY PLAYZONE ===== -->
+    <section class="py-24 px-16 max-w-content mx-auto">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl font-bold">The PlayZone Advantage</h2>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+
+        <div class="p-4">
+          <span class="material-symbols-outlined text-accent text-[48px] mb-4">verified</span>
+          <h4 class="text-sm font-semibold mb-2">Verified Courts</h4>
+          <p class="text-xs text-ink-muted">Every venue is personally inspected to ensure elite playing conditions.</p>
+        </div>
+
+        <div class="p-4">
+          <span class="material-symbols-outlined text-accent text-[48px] mb-4">bolt</span>
+          <h4 class="text-sm font-semibold mb-2">Fast Booking</h4>
+          <p class="text-xs text-ink-muted">Reservation confirmed in under 60 seconds with instant confirmation.</p>
+        </div>
+
+        <div class="p-4">
+          <span class="material-symbols-outlined text-accent text-[48px] mb-4">groups</span>
+          <h4 class="text-sm font-semibold mb-2">Community Matches</h4>
+          <p class="text-xs text-ink-muted">Don't have a team? Join public matches and meet local athletes.</p>
+        </div>
+
+        <div class="p-4">
+          <span class="material-symbols-outlined text-accent text-[48px] mb-4">lock</span>
+          <h4 class="text-sm font-semibold mb-2">Secure Reservations</h4>
+          <p class="text-xs text-ink-muted">Encrypted payments and protected personal data for peace of mind.</p>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="bg-surface-muted dark:bg-page-dark w-full pt-16 pb-8 border-t border-line/30">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-6 px-16 max-w-content mx-auto">
+
+      <div class="flex flex-col gap-2">
+        <span class="text-xl font-bold text-black dark:text-white">PlayZone</span>
+        <p class="text-xs text-ink-muted max-w-[200px]">The premium sports concierge service for modern urban athletes.
+        </p>
+      </div>
+
+      <div class="flex flex-col gap-4">
+        <h5 class="text-sm font-semibold uppercase text-black">Platform</h5>
+        <nav class="flex flex-col gap-2">
+          <a class="text-xs text-ink-muted hover:text-black transition-colors" href="#">Venues</a>
+          <a class="text-xs text-ink-muted hover:text-black transition-colors" href="#">Leagues</a>
+          <a class="text-xs text-ink-muted hover:text-black transition-colors" href="#">Community</a>
+          <a class="text-xs text-ink-muted hover:text-black transition-colors" href="#">Partner with Us</a>
+        </nav>
+      </div>
+
+      <div class="flex flex-col gap-4">
+        <h5 class="text-sm font-semibold uppercase text-black">Support</h5>
+        <nav class="flex flex-col gap-2">
+          <a class="text-xs text-ink-muted hover:text-black transition-colors" href="#">Help Center</a>
+          <a class="text-xs text-ink-muted hover:text-black transition-colors" href="#">Privacy Policy</a>
+          <a class="text-xs text-ink-muted hover:text-black transition-colors" href="#">Terms of Service</a>
+        </nav>
+      </div>
+
+      <div class="flex flex-col gap-4">
+        <h5 class="text-sm font-semibold uppercase text-black">Connect</h5>
+        <div class="flex gap-4">
+          <a class="text-ink-muted hover:text-accent" href="#"><span class="material-symbols-outlined">share</span></a>
+          <a class="text-ink-muted hover:text-accent" href="#"><span class="material-symbols-outlined">mail</span></a>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="max-w-content mx-auto px-16 mt-16 pt-8 border-t border-line/10 text-center">
+      <p class="text-xs text-ink-muted">© 2024 PlayZone Concierge. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="./js/mainpage.js"></script>
+</body>
+
+</html>

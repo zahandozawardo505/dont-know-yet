@@ -1,0 +1,271 @@
+/* ============================================================
+   animations.css — PlayZone Reusable Animation Library
+   CSS-only. No JavaScript. Apply classes to elements as needed.
+   ============================================================ */
+
+/* ────────────────────────────────────────────────────────────
+   KEYFRAME DEFINITIONS
+   ──────────────────────────────────────────────────────────── */
+
+/* Fade In */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* Fade Up */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Fade Down */
+@keyframes fadeDown {
+  from { opacity: 0; transform: translateY(-24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Fade Left */
+@keyframes fadeLeft {
+  from { opacity: 0; transform: translateX(24px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+/* Fade Right */
+@keyframes fadeRight {
+  from { opacity: 0; transform: translateX(-24px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+/* Scale In */
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.92); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+/* Scale Up (pop) */
+@keyframes scaleUp {
+  0%   { transform: scale(1); }
+  50%  { transform: scale(1.08); }
+  100% { transform: scale(1); }
+}
+
+/* Rotate */
+@keyframes rotate {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+/* Bounce */
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); animation-timing-function: cubic-bezier(0.8, 0, 1, 1); }
+  50%       { transform: translateY(-12px); animation-timing-function: cubic-bezier(0, 0, 0.2, 1); }
+}
+
+/* Floating (up-down idle) */
+@keyframes floating {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-8px); }
+}
+
+/* Swing */
+@keyframes swing {
+  0%, 100% { transform: rotate(-10deg); }
+  50%       { transform: rotate(10deg); }
+}
+
+/* Pulse glow */
+@keyframes pulseGlow {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(var(--color-accent), 0.3); }
+  50%       { box-shadow: 0 0 0 10px rgba(var(--color-accent), 0); }
+}
+
+/* Shimmer sweep */
+@keyframes shimmer {
+  0%   { background-position: -200% 0; }
+  100% { background-position:  200% 0; }
+}
+
+/* Rolling (football) */
+@keyframes rolling {
+  from { transform: rotate(0deg) translateX(0); }
+  to   { transform: rotate(360deg) translateX(0); }
+}
+
+/* Spin (tennis ball) */
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+/* ────────────────────────────────────────────────────────────
+   ENTRANCE ANIMATION CLASSES
+   Apply with optional delay & duration utilities below.
+   ──────────────────────────────────────────────────────────── */
+
+.anim-fade-in    { animation: fadeIn    0.5s ease both; }
+.anim-fade-up    { animation: fadeUp    0.6s ease both; }
+.anim-fade-down  { animation: fadeDown  0.6s ease both; }
+.anim-fade-left  { animation: fadeLeft  0.6s ease both; }
+.anim-fade-right { animation: fadeRight 0.6s ease both; }
+.anim-scale-in   { animation: scaleIn   0.5s ease both; }
+
+/* ── Animation Delay Utilities ────────────────────────────── */
+.anim-delay-100 { animation-delay: 100ms; }
+.anim-delay-200 { animation-delay: 200ms; }
+.anim-delay-300 { animation-delay: 300ms; }
+.anim-delay-400 { animation-delay: 400ms; }
+.anim-delay-500 { animation-delay: 500ms; }
+.anim-delay-600 { animation-delay: 600ms; }
+.anim-delay-700 { animation-delay: 700ms; }
+.anim-delay-800 { animation-delay: 800ms; }
+
+/* ── Animation Duration Utilities ─────────────────────────── */
+.anim-dur-300  { animation-duration: 300ms; }
+.anim-dur-500  { animation-duration: 500ms; }
+.anim-dur-700  { animation-duration: 700ms; }
+.anim-dur-1000 { animation-duration: 1000ms; }
+
+/* ────────────────────────────────────────────────────────────
+   LOOPING / IDLE ANIMATION CLASSES
+   ──────────────────────────────────────────────────────────── */
+.anim-float   { animation: floating 3s ease-in-out infinite; }
+.anim-bounce  { animation: bounce  1.2s infinite; }
+.anim-rotate  { animation: rotate  8s linear infinite; }
+.anim-spin    { animation: spin    2s linear infinite; }
+.anim-swing   { animation: swing  2.5s ease-in-out infinite; }
+
+/* ────────────────────────────────────────────────────────────
+   HOVER ANIMATION UTILITIES (CSS only, no JS)
+   ──────────────────────────────────────────────────────────── */
+
+/* Generic lift on hover */
+.hover-lift {
+  transition: transform var(--transition-slow), box-shadow var(--transition-slow);
+}
+.hover-lift:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-xl);
+}
+
+/* Subtle lift (smaller cards) */
+.hover-lift-sm {
+  transition: transform var(--transition-base);
+}
+.hover-lift-sm:hover { transform: translateY(-2px); }
+
+/* Scale on hover */
+.hover-scale {
+  transition: transform var(--transition-base);
+}
+.hover-scale:hover { transform: scale(1.03); }
+
+/* Button pop */
+.hover-pop {
+  transition: transform var(--transition-fast);
+}
+.hover-pop:hover  { transform: scale(1.05); }
+.hover-pop:active { transform: scale(0.97); }
+
+/* Card image zoom */
+.hover-img-zoom {
+  overflow: hidden;
+}
+.hover-img-zoom img,
+.hover-img-zoom .sport-card__img {
+  transition: transform var(--transition-slower);
+}
+.hover-img-zoom:hover img,
+.hover-img-zoom:hover .sport-card__img {
+  transform: scale(1.08);
+}
+
+/* Navigation link underline slide */
+.hover-underline {
+  position: relative;
+}
+.hover-underline::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: currentColor;
+  border-radius: 9999px;
+  transition: width var(--transition-base);
+}
+.hover-underline:hover::after { width: 100%; }
+
+/* Icon grow on hover (used in quick actions) */
+.hover-icon-grow .material-symbols-outlined {
+  transition: transform var(--transition-base);
+}
+.hover-icon-grow:hover .material-symbols-outlined {
+  transform: scale(1.15);
+}
+
+/* ────────────────────────────────────────────────────────────
+   SPORT ICON ANIMATIONS
+   Each sport icon gets its own characteristic animation.
+   Use these classes on <span class="material-symbols-outlined">
+   ──────────────────────────────────────────────────────────── */
+
+/* Football — rolling ball */
+.sport-anim-football {
+  animation: rolling 3s linear infinite;
+  display: inline-block;
+  transform-origin: center;
+}
+
+/* Basketball — bounce */
+.sport-anim-basketball {
+  animation: bounce 0.9s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+  display: inline-block;
+}
+
+/* Tennis — fast spin */
+.sport-anim-tennis {
+  animation: spin 1.2s linear infinite;
+  display: inline-block;
+}
+
+/* Padel — smooth slow rotation */
+.sport-anim-padel {
+  animation: spin 3s ease-in-out infinite;
+  display: inline-block;
+}
+
+/* Volleyball — floating up-down */
+.sport-anim-volleyball {
+  animation: floating 2.5s ease-in-out infinite;
+  display: inline-block;
+}
+
+/* Badminton — swing back and forth */
+.sport-anim-badminton {
+  animation: swing 1.8s ease-in-out infinite;
+  display: inline-block;
+  transform-origin: bottom center;
+}
+
+/* ────────────────────────────────────────────────────────────
+   PAGE TRANSITION (for future SPA / multi-page feel)
+   ──────────────────────────────────────────────────────────── */
+.page-enter {
+  animation: fadeUp 0.4s ease both;
+}
+
+/* ────────────────────────────────────────────────────────────
+   REDUCE MOTION ACCESSIBILITY
+   Honour prefers-reduced-motion system preference.
+   ──────────────────────────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

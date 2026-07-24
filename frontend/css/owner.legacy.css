@@ -1,0 +1,3445 @@
+/* ===================================================
+   SportBook Dashboard CSS
+   Part 1 - Global Styles
+=================================================== */
+
+/* ===========================
+   Google Font
+=========================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap');
+
+/* ===========================
+   CSS Variables
+=========================== */
+
+:root{
+
+    --primary:#2563eb;
+    --primary-dark:#1d4ed8;
+
+    --secondary:#10b981;
+
+    --danger:#ef4444;
+
+    --warning:#f59e0b;
+
+    --purple:#8b5cf6;
+
+    --background:#f5f7fb;
+
+    --sidebar:#1e293b;
+
+    --sidebar-light:#334155;
+
+    --white:#ffffff;
+
+    --black:#111827;
+
+    --gray:#64748b;
+
+    --border:#e5e7eb;
+
+    --shadow:
+        0 8px 25px rgba(0,0,0,.08);
+
+    --radius:16px;
+
+    --transition:.3s ease;
+
+}
+
+/* ===========================
+   Reset
+=========================== */
+
+*{
+
+margin:0;
+
+padding:0;
+
+box-sizing:border-box;
+
+}
+
+html{
+
+scroll-behavior:smooth;
+
+}
+
+body{
+
+font-family:'Inter',sans-serif;
+
+background:var(--background);
+
+color:var(--black);
+
+}
+
+/* ===========================
+Scrollbar
+=========================== */
+
+::-webkit-scrollbar{
+
+width:10px;
+
+}
+
+::-webkit-scrollbar-track{
+
+background:#edf2f7;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+background:var(--primary);
+
+border-radius:50px;
+
+}
+
+::-webkit-scrollbar-thumb:hover{
+
+background:var(--primary-dark);
+
+}
+
+/* ===========================
+Typography
+=========================== */
+
+h1,h2,h3,h4{
+
+font-family:'Poppins',sans-serif;
+
+font-weight:600;
+
+color:var(--black);
+
+}
+
+h1{
+
+font-size:2rem;
+
+}
+
+h2{
+
+font-size:1.35rem;
+
+}
+
+h3{
+
+font-size:1.05rem;
+
+}
+
+p{
+
+color:var(--gray);
+
+line-height:1.6;
+
+}
+
+a{
+
+text-decoration:none;
+
+color:inherit;
+
+}
+
+img{
+
+max-width:100%;
+
+display:block;
+
+}
+
+/* ===========================
+Container
+=========================== */
+
+.container{
+
+display:flex;
+
+min-height:100vh;
+
+}
+
+/* ===========================
+Main
+=========================== */
+
+main{
+
+flex:1;
+
+padding:35px;
+
+overflow:auto;
+
+}
+
+/* ===========================
+Page Title
+=========================== */
+
+.page-title{
+
+margin-bottom:30px;
+
+}
+
+.page-title h1{
+
+margin-bottom:8px;
+
+}
+
+.page-title p{
+
+font-size:15px;
+
+}
+
+/* ===========================
+Panels
+=========================== */
+
+.panel{
+
+background:white;
+
+border-radius:var(--radius);
+
+padding:25px;
+
+box-shadow:var(--shadow);
+
+margin-bottom:25px;
+
+transition:var(--transition);
+
+}
+
+.panel:hover{
+
+transform:translateY(-4px);
+
+}
+
+.panel h2{
+
+margin-bottom:18px;
+
+}
+
+/* ===========================
+Grid Helpers
+=========================== */
+
+.analytics-grid,
+
+.dashboard-grid{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(350px,1fr));
+
+gap:25px;
+
+margin-top:30px;
+
+}
+
+/* ===========================
+Spacing
+=========================== */
+
+section{
+
+margin-bottom:35px;
+
+}
+
+/* ===========================
+Inputs
+=========================== */
+
+input,
+
+select,
+
+textarea{
+
+width:100%;
+
+padding:14px;
+
+border:1px solid var(--border);
+
+border-radius:12px;
+
+outline:none;
+
+font-size:15px;
+
+font-family:inherit;
+
+transition:var(--transition);
+
+background:white;
+
+}
+
+input:focus,
+
+select:focus,
+
+textarea:focus{
+
+border-color:var(--primary);
+
+box-shadow:0 0 0 4px rgba(37,99,235,.12);
+
+}
+
+textarea{
+
+resize:vertical;
+
+}
+
+/* ===========================
+Buttons
+=========================== */
+
+button{
+
+border:none;
+
+padding:12px 22px;
+
+border-radius:12px;
+
+cursor:pointer;
+
+font-size:15px;
+
+font-weight:600;
+
+transition:var(--transition);
+
+}
+
+button:hover{
+
+transform:translateY(-2px);
+
+}
+
+/* ===========================
+Lists
+=========================== */
+
+ul{
+
+list-style:none;
+
+}
+
+/* ===========================
+Transitions
+=========================== */
+
+.card,
+
+.panel,
+
+button,
+
+.court-card,
+
+.sidebar li,
+
+table tr{
+
+transition:.3s;
+
+}/* ===================================================
+   PART 2 - Sidebar & Top Navigation
+=================================================== */
+
+
+/* ===========================
+   Sidebar
+=========================== */
+
+.sidebar{
+
+    width:270px;
+    background:var(--sidebar);
+    color:white;
+
+    display:flex;
+    flex-direction:column;
+
+    padding:30px 22px;
+
+    position:sticky;
+    top:0;
+
+    height:100vh;
+
+    box-shadow:
+    8px 0 30px rgba(0,0,0,.15);
+
+}
+
+/* Logo */
+
+.sidebar h2{
+
+    color:white;
+
+    font-size:30px;
+
+    margin-bottom:45px;
+
+    text-align:center;
+
+    letter-spacing:1px;
+
+}
+
+/* Navigation */
+
+.sidebar ul{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:12px;
+
+}
+
+/* Links */
+
+.sidebar li a{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:16px;
+
+    padding:16px 18px;
+
+    border-radius:14px;
+
+    color:#dbe4ef;
+
+    font-size:15px;
+
+    font-weight:500;
+
+}
+
+/* Icons */
+
+.sidebar li i{
+
+    width:24px;
+
+    text-align:center;
+
+    font-size:18px;
+
+}
+
+/* Hover */
+
+.sidebar li:hover a{
+
+    background:rgba(255,255,255,.08);
+
+    color:white;
+
+    transform:translateX(6px);
+
+}
+
+/* Active Page */
+
+.sidebar li.active a{
+
+    background:var(--primary);
+
+    color:white;
+
+    box-shadow:
+
+    0 10px 25px rgba(37,99,235,.35);
+
+}
+
+/* Small Divider */
+
+.sidebar::after{
+
+    content:"";
+
+    margin-top:auto;
+
+    border-top:1px solid rgba(255,255,255,.08);
+
+    padding-top:25px;
+
+}
+
+/* Footer Text */
+
+.sidebar::before{
+
+    content:"Owner Dashboard";
+
+    color:#94a3b8;
+
+    margin-top:auto;
+
+    font-size:13px;
+
+    text-align:center;
+
+}
+
+
+
+/* ===========================
+   Top Navigation
+=========================== */
+
+.topbar{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:35px;
+
+    gap:20px;
+
+}
+
+/* Search */
+
+.search{
+
+    flex:1;
+
+    position:relative;
+
+}
+
+.search input{
+
+    padding-left:48px;
+
+    height:50px;
+
+    border-radius:14px;
+
+    background:white;
+
+    box-shadow:var(--shadow);
+
+}
+
+.search::before{
+
+    content:"\f002";
+
+    font-family:"Font Awesome 6 Free";
+
+    font-weight:900;
+
+    position:absolute;
+
+    left:18px;
+
+    top:16px;
+
+    color:var(--gray);
+
+}
+
+/* Right Side */
+
+.top-right{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:22px;
+
+}
+
+/* Notification */
+
+.top-right i.fa-bell{
+
+    width:48px;
+
+    height:48px;
+
+    border-radius:50%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:white;
+
+    box-shadow:var(--shadow);
+
+    cursor:pointer;
+
+    transition:.3s;
+
+    font-size:18px;
+
+}
+
+.top-right i.fa-bell:hover{
+
+    color:var(--primary);
+
+    transform:rotate(15deg);
+
+}
+
+/* Profile */
+
+.profile{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:14px;
+
+    background:white;
+
+    padding:8px 18px 8px 8px;
+
+    border-radius:40px;
+
+    box-shadow:var(--shadow);
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.profile:hover{
+
+    transform:translateY(-3px);
+
+}
+
+.profile img{
+
+    width:46px;
+
+    height:46px;
+
+    border-radius:50%;
+
+    object-fit:cover;
+
+}
+
+.profile span{
+
+    font-weight:600;
+
+    color:var(--black);
+
+}
+
+/* ===========================
+   Hero Section
+=========================== */
+
+.hero{
+
+    background:
+
+    linear-gradient(135deg,
+    var(--primary),
+    #4f8cff);
+
+    color:white;
+
+    border-radius:20px;
+
+    padding:40px;
+
+    margin-bottom:35px;
+
+    box-shadow:
+
+    0 20px 45px rgba(37,99,235,.25);
+
+}
+
+.hero h1{
+
+    color:white;
+
+    margin-bottom:10px;
+
+    font-size:34px;
+
+}
+
+.hero p{
+
+    color:rgba(255,255,255,.9);
+
+    max-width:650px;
+
+    font-size:16px;
+
+}
+
+/* ===========================
+   Breadcrumb (Future Use)
+=========================== */
+
+.breadcrumb{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    margin-bottom:20px;
+
+    color:var(--gray);
+
+}
+
+.breadcrumb a{
+
+    color:var(--primary);
+
+}
+
+.breadcrumb span{
+
+    color:var(--gray);
+
+}/* ===================================================
+   PART 3 - Dashboard Cards & Statistics
+=================================================== */
+
+
+/* ===========================
+   Statistics Cards Grid
+=========================== */
+
+.cards{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+
+    gap:25px;
+
+    margin-bottom:40px;
+
+}
+
+
+/* ===========================
+   Statistic Card
+=========================== */
+
+.card{
+
+    background:var(--white);
+
+    border-radius:20px;
+
+    padding:28px;
+
+    box-shadow:var(--shadow);
+
+    position:relative;
+
+    overflow:hidden;
+
+    cursor:pointer;
+
+}
+
+
+/* Top Accent Line */
+
+.card::before{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+    top:0;
+
+    width:100%;
+    height:5px;
+
+    background:var(--primary);
+
+}
+
+
+/* Hover */
+
+.card:hover{
+
+    transform:translateY(-10px);
+
+    box-shadow:
+
+        0 18px 45px rgba(0,0,0,.15);
+
+}
+
+
+/* Icon Circle */
+
+.card i{
+
+    width:65px;
+    height:65px;
+
+    border-radius:18px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:28px;
+
+    color:white;
+
+    margin-bottom:20px;
+
+}
+
+
+/* Different Colors */
+
+.cards .card:nth-child(1) i{
+
+    background:#2563eb;
+
+}
+
+.cards .card:nth-child(2) i{
+
+    background:#10b981;
+
+}
+
+.cards .card:nth-child(3) i{
+
+    background:#f59e0b;
+
+}
+
+.cards .card:nth-child(4) i{
+
+    background:#8b5cf6;
+
+}
+
+
+/* Numbers */
+
+.card h2{
+
+    font-size:34px;
+
+    margin-bottom:8px;
+
+}
+
+
+/* Description */
+
+.card p{
+
+    font-size:15px;
+
+    color:var(--gray);
+
+}
+
+
+/* Decorative Circle */
+
+.card::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:180px;
+    height:180px;
+
+    border-radius:50%;
+
+    background:rgba(37,99,235,.05);
+
+    right:-70px;
+    bottom:-70px;
+
+}
+
+
+/* ===========================
+   Dashboard Grid
+=========================== */
+
+.dashboard-grid{
+
+    display:grid;
+
+    grid-template-columns:2fr 1fr;
+
+    gap:30px;
+
+    margin-top:35px;
+
+}
+
+
+/* ===========================
+   Generic Dashboard Panels
+=========================== */
+
+.panel{
+
+    background:white;
+
+    border-radius:20px;
+
+    padding:28px;
+
+    box-shadow:var(--shadow);
+
+}
+
+
+.panel h2{
+
+    margin-bottom:22px;
+
+}
+
+
+/* ===========================
+   Booking Cards
+=========================== */
+
+.booking-item{
+
+    padding:18px;
+
+    border-radius:15px;
+
+    background:#f8fafc;
+
+    margin-bottom:16px;
+
+    transition:.3s;
+
+    border-left:5px solid var(--primary);
+
+}
+
+
+.booking-item:hover{
+
+    transform:translateX(8px);
+
+    background:#eef5ff;
+
+}
+
+
+.booking-item h3{
+
+    margin-bottom:6px;
+
+}
+
+
+.booking-item p{
+
+    font-size:14px;
+
+}
+
+
+/* ===========================
+   Recent Activity
+=========================== */
+
+.panel ul{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:18px;
+
+}
+
+
+.panel ul li{
+
+    background:#f8fafc;
+
+    padding:16px;
+
+    border-radius:14px;
+
+    transition:.3s;
+
+}
+
+
+.panel ul li:hover{
+
+    transform:translateX(8px);
+
+}
+
+
+/* ===========================
+   KPI Highlight
+=========================== */
+
+.kpi{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:20px;
+
+}
+
+
+.kpi-value{
+
+    font-size:42px;
+
+    font-weight:bold;
+
+    color:var(--primary);
+
+}
+
+
+.kpi-change{
+
+    color:var(--secondary);
+
+    font-weight:600;
+
+}
+
+
+/* ===========================
+   Analytics Panels
+=========================== */
+
+.analytics-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(400px,1fr));
+
+    gap:30px;
+
+    margin-top:30px;
+
+}
+
+
+/* Chart Containers */
+
+.analytics-grid .panel{
+
+    min-height:380px;
+
+}
+
+
+/* Canvas */
+
+canvas{
+
+    width:100% !important;
+
+    height:280px !important;
+
+}
+
+
+/* ===========================
+   Progress Cards
+=========================== */
+
+.progress-card{
+
+    margin-bottom:25px;
+
+}
+
+
+.progress-card h3{
+
+    margin-bottom:10px;
+
+}
+
+
+.progress{
+
+    background:#e5e7eb;
+
+    border-radius:50px;
+
+    overflow:hidden;
+
+    height:14px;
+
+}
+
+
+.progress span{
+
+    display:block;
+
+    height:100%;
+
+    background:linear-gradient(
+
+        90deg,
+
+        var(--primary),
+
+        #4f8cff
+
+    );
+
+}
+
+
+/* ===========================
+   Revenue Highlight
+=========================== */
+
+.revenue-box{
+
+    background:linear-gradient(
+
+        135deg,
+
+        var(--primary),
+
+        #4f8cff
+
+    );
+
+    color:white;
+
+    padding:35px;
+
+    border-radius:20px;
+
+}
+
+
+.revenue-box h2{
+
+    color:white;
+
+    font-size:40px;
+
+}
+
+
+.revenue-box p{
+
+    color:rgba(255,255,255,.85);
+
+}
+
+
+/* ===========================
+   Small Info Cards
+=========================== */
+
+.info-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:18px;
+
+    margin-top:25px;
+
+}
+
+
+.info-card{
+
+    background:#f8fafc;
+
+    border-radius:15px;
+
+    padding:18px;
+
+    transition:.3s;
+
+}
+
+
+.info-card:hover{
+
+    transform:translateY(-6px);
+
+}
+
+
+.info-card h4{
+
+    margin-bottom:6px;
+
+}
+
+
+.info-card span{
+
+    font-size:24px;
+
+    font-weight:bold;
+
+    color:var(--primary);
+
+}/* ===================================================
+   PART 4 - Tables, Filters & Badges
+===================================================*/
+
+
+/* ===========================
+   Filter Bar
+=========================== */
+
+.filter-bar{
+
+    display:flex;
+    flex-wrap:wrap;
+    gap:15px;
+
+    align-items:center;
+
+    background:white;
+
+    padding:20px;
+
+    border-radius:20px;
+
+    box-shadow:var(--shadow);
+
+    margin-bottom:30px;
+
+}
+
+.filter-bar input,
+.filter-bar select{
+
+    flex:1;
+    min-width:180px;
+
+}
+
+.filter-bar button{
+
+    white-space:nowrap;
+
+}
+
+
+/* ===========================
+   Table Container
+=========================== */
+
+.table-section{
+
+    background:white;
+
+    border-radius:20px;
+
+    padding:25px;
+
+    box-shadow:var(--shadow);
+
+    overflow-x:auto;
+
+}
+
+.table-section h2{
+
+    margin-bottom:20px;
+
+}
+
+
+/* ===========================
+   Table
+=========================== */
+
+table{
+
+    width:100%;
+
+    border-collapse:collapse;
+
+    min-width:950px;
+
+}
+
+
+/* ===========================
+   Header
+=========================== */
+
+thead{
+
+    background:#f8fafc;
+
+}
+
+thead th{
+
+    padding:18px;
+
+    text-align:left;
+
+    color:var(--gray);
+
+    font-size:14px;
+
+    text-transform:uppercase;
+
+    letter-spacing:.5px;
+
+}
+
+
+/* ===========================
+   Body
+=========================== */
+
+tbody td{
+
+    padding:18px;
+
+    border-top:1px solid #edf2f7;
+
+    vertical-align:middle;
+
+}
+
+
+/* ===========================
+   Hover
+=========================== */
+
+tbody tr{
+
+    transition:.25s;
+
+}
+
+tbody tr:hover{
+
+    background:#f9fbff;
+
+}
+
+
+/* ===========================
+Customer Column
+=========================== */
+
+tbody td:first-child{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+}
+
+
+/* Customer Image */
+
+tbody td img{
+
+    width:42px;
+
+    height:42px;
+
+    border-radius:50%;
+
+    object-fit:cover;
+
+}
+
+
+/* ===========================
+Action Buttons
+=========================== */
+
+td button{
+
+    margin-right:8px;
+
+    margin-bottom:5px;
+
+    padding:8px 16px;
+
+    font-size:13px;
+
+    border-radius:10px;
+
+}
+
+
+/* View */
+
+td button:nth-child(1){
+
+    background:var(--primary);
+
+    color:white;
+
+}
+
+
+/* Edit */
+
+td button:nth-child(2){
+
+    background:var(--warning);
+
+    color:white;
+
+}
+
+
+/* Delete */
+
+td button:nth-child(3){
+
+    background:var(--danger);
+
+    color:white;
+
+}
+
+
+/* Archive */
+
+td button:nth-child(4){
+
+    background:#64748b;
+
+    color:white;
+
+}
+
+
+/* Hover */
+
+td button:hover{
+
+    transform:translateY(-2px);
+
+}
+
+
+/* ===========================
+Status Badges
+=========================== */
+
+.confirmed,
+.completed,
+.pending,
+.cancelled,
+.available,
+.unavailable,
+.maintenance,
+.checked,
+.waiting,
+.paid,
+.pending-payment{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:7px 14px;
+
+    border-radius:50px;
+
+    font-size:13px;
+
+    font-weight:600;
+
+}
+
+
+/* Confirmed */
+
+.confirmed{
+
+    background:#dcfce7;
+
+    color:#15803d;
+
+}
+
+
+/* Completed */
+
+.completed{
+
+    background:#dbeafe;
+
+    color:#1d4ed8;
+
+}
+
+
+/* Pending */
+
+.pending{
+
+    background:#fef3c7;
+
+    color:#b45309;
+
+}
+
+
+/* Cancelled */
+
+.cancelled{
+
+    background:#fee2e2;
+
+    color:#b91c1c;
+
+}
+
+
+/* Paid */
+
+.paid{
+
+    background:#d1fae5;
+
+    color:#047857;
+
+}
+
+
+/* Payment Pending */
+
+.pending-payment{
+
+    background:#fef3c7;
+
+    color:#92400e;
+
+}
+
+
+/* QR Checked */
+
+.checked{
+
+    background:#dbeafe;
+
+    color:#1e40af;
+
+}
+
+
+/* Waiting */
+
+.waiting{
+
+    background:#ede9fe;
+
+    color:#6d28d9;
+
+}
+
+
+/* Court Available */
+
+.available{
+
+    background:#dcfce7;
+
+    color:#166534;
+
+}
+
+
+/* Court Maintenance */
+
+.maintenance{
+
+    background:#fef3c7;
+
+    color:#92400e;
+
+}
+
+
+/* Court Unavailable */
+
+.unavailable{
+
+    background:#fee2e2;
+
+    color:#b91c1c;
+
+}
+
+
+/* ===========================
+Export Buttons
+=========================== */
+
+.filter-bar button{
+
+    background:var(--primary);
+
+    color:white;
+
+}
+
+.filter-bar button:nth-last-child(2){
+
+    background:#10b981;
+
+}
+
+.filter-bar button:last-child{
+
+    background:#ef4444;
+
+}
+
+
+/* ===========================
+Table Footer
+=========================== */
+
+.table-footer{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-top:20px;
+
+}
+
+
+/* ===========================
+Pagination
+=========================== */
+
+.pagination{
+
+    display:flex;
+
+    gap:10px;
+
+}
+
+.pagination button{
+
+    width:42px;
+
+    height:42px;
+
+    padding:0;
+
+    border-radius:12px;
+
+    background:white;
+
+    border:1px solid #e5e7eb;
+
+}
+
+.pagination button.active{
+
+    background:var(--primary);
+
+    color:white;
+
+}
+
+
+/* ===========================
+Reservation Cards
+=========================== */
+
+.reservation-card{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:20px;
+
+    border-radius:18px;
+
+    background:white;
+
+    box-shadow:var(--shadow);
+
+    margin-bottom:18px;
+
+}
+
+.reservation-card:hover{
+
+    transform:translateY(-4px);
+
+}
+
+.reservation-info{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:18px;
+
+}
+
+.reservation-info img{
+
+    width:60px;
+
+    height:60px;
+
+    border-radius:50%;
+
+}
+
+.reservation-actions{
+
+    display:flex;
+
+    gap:10px;
+
+}
+
+
+/* ===========================
+Search Highlight
+=========================== */
+
+.highlight{
+
+    background:#fde68a;
+
+    padding:2px 5px;
+
+    border-radius:5px;
+
+}
+
+
+/* ===========================
+Empty State
+=========================== */
+
+.empty-state{
+
+    text-align:center;
+
+    padding:60px 20px;
+
+    color:var(--gray);
+
+}
+
+.empty-state i{
+
+    font-size:60px;
+
+    margin-bottom:20px;
+
+    color:#cbd5e1;
+
+}
+
+.empty-state h3{
+
+    margin-bottom:10px;
+
+}
+
+
+/* ===========================
+Responsive Table
+=========================== */
+
+@media(max-width:900px){
+
+.table-section{
+
+overflow:auto;
+
+}
+
+table{
+
+min-width:900px;
+
+}
+
+}/* ===================================================
+   PART 5 - Courts, Forms & Upload
+===================================================*/
+
+
+/* ===========================
+   Court Grid
+=========================== */
+
+.court-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+
+    gap:30px;
+
+}
+
+
+/* ===========================
+   Court Card
+=========================== */
+
+.court-card{
+
+    background:white;
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+    box-shadow:var(--shadow);
+
+    transition:.35s;
+
+}
+
+.court-card:hover{
+
+    transform:translateY(-10px);
+
+    box-shadow:
+        0 20px 45px rgba(0,0,0,.15);
+
+}
+
+
+/* ===========================
+   Court Image
+=========================== */
+
+.court-card img{
+
+    width:100%;
+
+    height:230px;
+
+    object-fit:cover;
+
+}
+
+
+/* ===========================
+   Court Info
+=========================== */
+
+.court-info{
+
+    padding:24px;
+
+}
+
+.court-info h2{
+
+    margin-bottom:10px;
+
+}
+
+.court-info p{
+
+    margin-bottom:8px;
+
+}
+
+
+/* ===========================
+   Price
+=========================== */
+
+.court-info p:nth-child(3){
+
+    font-size:20px;
+
+    font-weight:bold;
+
+    color:var(--primary);
+
+}
+
+
+/* ===========================
+   Court Buttons
+=========================== */
+
+.court-buttons{
+
+    display:flex;
+
+    gap:12px;
+
+    margin-top:20px;
+
+}
+
+.court-buttons button{
+
+    flex:1;
+
+}
+
+.court-buttons button:first-child{
+
+    background:var(--primary);
+
+    color:white;
+
+}
+
+.court-buttons button:last-child{
+
+    background:var(--danger);
+
+    color:white;
+
+}
+
+
+/* ===========================
+   Toolbar
+=========================== */
+
+.toolbar{
+
+    display:flex;
+
+    gap:15px;
+
+    flex-wrap:wrap;
+
+    align-items:center;
+
+    margin-bottom:30px;
+
+}
+
+.toolbar button{
+
+    background:var(--primary);
+
+    color:white;
+
+}
+
+.toolbar select{
+
+    max-width:220px;
+
+}
+
+
+/* ===================================================
+   Form
+=================================================== */
+
+.court-form{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:28px;
+
+}
+
+
+/* ===========================
+   Form Sections
+=========================== */
+
+.form-section{
+
+    background:white;
+
+    padding:28px;
+
+    border-radius:20px;
+
+    box-shadow:var(--shadow);
+
+}
+
+.form-section h2{
+
+    margin-bottom:24px;
+
+    padding-bottom:12px;
+
+    border-bottom:1px solid #e5e7eb;
+
+}
+
+
+/* ===========================
+   Labels
+=========================== */
+
+.form-section label{
+
+    display:block;
+
+    margin-bottom:8px;
+
+    font-weight:600;
+
+    color:#334155;
+
+}
+
+
+/* ===========================
+   Grid
+=========================== */
+
+.form-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+
+    gap:25px;
+
+}
+
+
+/* ===========================
+   Time Grid
+=========================== */
+
+.time-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+
+    gap:20px;
+
+}
+
+
+/* ===========================
+   Checkbox Grid
+=========================== */
+
+.checkbox-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+
+    gap:16px;
+
+}
+
+.checkbox-grid label{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    cursor:pointer;
+
+}
+
+
+/* ===========================
+   Radio Buttons
+=========================== */
+
+input[type="radio"]{
+
+    width:18px;
+
+    height:18px;
+
+}
+
+
+/* ===========================
+   Checkboxes
+=========================== */
+
+input[type="checkbox"]{
+
+    width:18px;
+
+    height:18px;
+
+}
+
+
+/* ===========================
+   Textarea
+=========================== */
+
+textarea{
+
+    min-height:170px;
+
+}
+
+
+/* ===================================================
+   Upload Area
+=================================================== */
+
+.upload-box{
+
+    border:3px dashed #cbd5e1;
+
+    border-radius:20px;
+
+    padding:60px 30px;
+
+    text-align:center;
+
+    transition:.3s;
+
+    background:#f8fafc;
+
+}
+
+.upload-box:hover{
+
+    border-color:var(--primary);
+
+    background:#eef5ff;
+
+}
+
+.upload-box i{
+
+    font-size:70px;
+
+    color:var(--primary);
+
+    margin-bottom:18px;
+
+}
+
+.upload-box p{
+
+    margin-bottom:10px;
+
+}
+
+.upload-box input{
+
+    margin-top:18px;
+
+}
+
+
+/* ===================================================
+   Button Group
+=================================================== */
+
+.button-group{
+
+    display:flex;
+
+    gap:18px;
+
+    flex-wrap:wrap;
+
+}
+
+.button-group button{
+
+    padding:15px 30px;
+
+}
+
+.button-group button:first-child{
+
+    background:var(--primary);
+
+    color:white;
+
+}
+
+.button-group button:nth-child(2){
+
+    background:var(--danger);
+
+    color:white;
+
+}
+
+.button-group button:last-child{
+
+    background:#64748b;
+
+    color:white;
+
+}
+
+
+/* ===================================================
+   Court Summary
+=================================================== */
+
+.court-summary{
+
+    display:grid;
+
+    grid-template-columns:360px 1fr;
+
+    gap:30px;
+
+    margin-bottom:35px;
+
+}
+
+.court-image{
+
+    background:white;
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+    box-shadow:var(--shadow);
+
+}
+
+.court-image img{
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+}
+
+.court-details{
+
+    background:white;
+
+    border-radius:20px;
+
+    padding:30px;
+
+    box-shadow:var(--shadow);
+
+}
+
+.court-details h2{
+
+    margin-bottom:20px;
+
+}
+
+.court-details p{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    margin-bottom:14px;
+
+}
+
+.court-details i{
+
+    color:var(--primary);
+
+    width:22px;
+
+}
+
+
+/* ===================================================
+   Performance List
+=================================================== */
+
+.form-section ul{
+
+    display:grid;
+
+    gap:16px;
+
+}
+
+.form-section ul li{
+
+    background:#f8fafc;
+
+    padding:16px;
+
+    border-radius:12px;
+
+    border-left:5px solid var(--primary);
+
+}
+
+
+/* ===================================================
+   Amenities
+=================================================== */
+
+.checkbox-grid label:hover{
+
+    color:var(--primary);
+
+}
+
+
+/* ===================================================
+   Focus Effect
+=================================================== */
+
+input:focus,
+textarea:focus,
+select:focus{
+
+    transform:translateY(-2px);
+
+}
+
+
+/* ===================================================
+   Mobile
+=================================================== */
+
+@media(max-width:1000px){
+
+.court-summary{
+
+grid-template-columns:1fr;
+
+}
+
+}/* ===================================================
+   PART 6 - Analytics Dashboard
+===================================================*/
+
+/* ===========================
+   Analytics Grid
+=========================== */
+
+.analytics-grid{
+
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(420px,1fr));
+    gap:30px;
+    margin-bottom:35px;
+
+}
+
+/* ===========================
+   Chart Panels
+=========================== */
+
+.analytics-grid .panel{
+
+    min-height:420px;
+    display:flex;
+    flex-direction:column;
+
+}
+
+.analytics-grid .panel h2{
+
+    margin-bottom:20px;
+
+}
+
+.analytics-grid canvas{
+
+    flex:1;
+    max-height:320px;
+
+}
+
+/* ===========================
+   Progress Element
+=========================== */
+
+progress{
+
+    width:100%;
+    height:14px;
+
+    border:none;
+
+    border-radius:30px;
+
+    overflow:hidden;
+
+    margin:12px 0 22px;
+
+}
+
+progress::-webkit-progress-bar{
+
+    background:#e2e8f0;
+    border-radius:30px;
+
+}
+
+progress::-webkit-progress-value{
+
+    background:linear-gradient(
+        90deg,
+        var(--primary),
+        #60a5fa
+    );
+
+    border-radius:30px;
+
+}
+
+progress::-moz-progress-bar{
+
+    background:linear-gradient(
+        90deg,
+        var(--primary),
+        #60a5fa
+    );
+
+}
+
+/* ===========================
+   Goal Labels
+=========================== */
+
+.panel p{
+
+    margin-top:10px;
+
+}
+
+/* ===========================
+   Insight List
+=========================== */
+
+.panel ul{
+
+    display:flex;
+    flex-direction:column;
+    gap:14px;
+
+}
+
+.panel ul li{
+
+    background:#f8fafc;
+
+    border-left:5px solid var(--primary);
+
+    padding:18px;
+
+    border-radius:12px;
+
+    transition:.3s;
+
+}
+
+.panel ul li:hover{
+
+    background:#eef4ff;
+
+    transform:translateX(8px);
+
+}
+
+/* ===========================
+   Reports Section
+=========================== */
+
+.panel button{
+
+    margin-right:12px;
+    margin-bottom:12px;
+
+}
+
+/* PDF */
+
+.panel button:nth-child(2){
+
+    background:#ef4444;
+    color:white;
+
+}
+
+/* Excel */
+
+.panel button:nth-child(3){
+
+    background:#10b981;
+    color:white;
+
+}
+
+/* Print */
+
+.panel button:nth-child(4){
+
+    background:#64748b;
+    color:white;
+
+}
+
+/* ===========================
+   Top Performing Table
+=========================== */
+
+.table-section tbody tr:first-child{
+
+    background:#fffbeb;
+
+}
+
+.table-section tbody tr:nth-child(2){
+
+    background:#f8fafc;
+
+}
+
+.table-section tbody tr:nth-child(3){
+
+    background:#fff7ed;
+
+}
+
+/* ===========================
+   Ranking Icons
+=========================== */
+
+.table-section td:first-child{
+
+    font-size:22px;
+    font-weight:bold;
+
+}
+
+/* ===========================
+   KPI Cards Animation
+=========================== */
+
+.card{
+
+    animation:fadeUp .8s ease;
+
+}
+
+.card:nth-child(2){
+
+    animation-delay:.1s;
+
+}
+
+.card:nth-child(3){
+
+    animation-delay:.2s;
+
+}
+
+.card:nth-child(4){
+
+    animation-delay:.3s;
+
+}
+
+/* ===========================
+   Revenue Highlight
+=========================== */
+
+.revenue-box{
+
+    background:linear-gradient(
+        135deg,
+        #2563eb,
+        #3b82f6
+    );
+
+    color:white;
+
+    padding:35px;
+
+    border-radius:20px;
+
+    box-shadow:
+        0 20px 40px rgba(37,99,235,.25);
+
+}
+
+.revenue-box h2{
+
+    color:white;
+    font-size:42px;
+    margin-bottom:8px;
+
+}
+
+.revenue-box p{
+
+    color:rgba(255,255,255,.85);
+
+}
+
+/* ===========================
+   Analytics Cards
+=========================== */
+
+.info-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+
+    gap:20px;
+
+}
+
+.info-card{
+
+    background:white;
+
+    border-radius:18px;
+
+    padding:22px;
+
+    text-align:center;
+
+    box-shadow:var(--shadow);
+
+    transition:.3s;
+
+}
+
+.info-card:hover{
+
+    transform:translateY(-8px);
+
+}
+
+.info-card span{
+
+    display:block;
+
+    font-size:32px;
+
+    color:var(--primary);
+
+    font-weight:bold;
+
+    margin-top:10px;
+
+}
+
+/* ===========================
+   Analytics Icons
+=========================== */
+
+.analytics-icon{
+
+    width:65px;
+    height:65px;
+
+    border-radius:18px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:#eef4ff;
+
+    color:var(--primary);
+
+    font-size:28px;
+
+    margin-bottom:18px;
+
+}
+
+/* ===========================
+   Report Buttons Hover
+=========================== */
+
+.panel button:hover{
+
+    opacity:.9;
+
+    transform:translateY(-3px);
+
+}
+
+/* ===========================
+   Key Metric
+=========================== */
+
+.metric{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:18px;
+
+    padding:15px 0;
+
+    border-bottom:1px solid #e5e7eb;
+
+}
+
+.metric:last-child{
+
+    border-bottom:none;
+
+}
+
+.metric-value{
+
+    font-size:22px;
+
+    font-weight:700;
+
+    color:var(--primary);
+
+}
+
+/* ===========================
+   Analytics Header
+=========================== */
+
+.analytics-header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:25px;
+
+}
+
+.analytics-header button{
+
+    background:var(--primary);
+
+    color:white;
+
+}/* ===================================================
+   PART 7 - Final Polish
+=================================================== */
+
+/* ===========================
+   Utility Classes
+=========================== */
+
+.text-center{
+    text-align:center;
+}
+
+.mt-1{margin-top:10px;}
+.mt-2{margin-top:20px;}
+.mt-3{margin-top:30px;}
+
+.mb-1{margin-bottom:10px;}
+.mb-2{margin-bottom:20px;}
+.mb-3{margin-bottom:30px;}
+
+.hidden{
+    display:none;
+}
+
+.w-100{
+    width:100%;
+}
+
+.rounded{
+    border-radius:20px;
+}
+
+
+/* ===========================
+   Fade Animation
+=========================== */
+
+@keyframes fadeUp{
+
+    from{
+
+        opacity:0;
+        transform:translateY(30px);
+
+    }
+
+    to{
+
+        opacity:1;
+        transform:translateY(0);
+
+    }
+
+}
+
+@keyframes fadeIn{
+
+    from{
+
+        opacity:0;
+
+    }
+
+    to{
+
+        opacity:1;
+
+    }
+
+}
+
+@keyframes slideLeft{
+
+    from{
+
+        transform:translateX(-50px);
+        opacity:0;
+
+    }
+
+    to{
+
+        transform:translateX(0);
+        opacity:1;
+
+    }
+
+}
+
+@keyframes pulse{
+
+    0%{
+
+        transform:scale(1);
+
+    }
+
+    50%{
+
+        transform:scale(1.05);
+
+    }
+
+    100%{
+
+        transform:scale(1);
+
+    }
+
+}
+
+
+/* ===========================
+   Animations
+=========================== */
+
+.sidebar{
+
+    animation:slideLeft .6s ease;
+
+}
+
+.topbar{
+
+    animation:fadeUp .6s ease;
+
+}
+
+.page-title{
+
+    animation:fadeUp .7s ease;
+
+}
+
+.panel{
+
+    animation:fadeUp .8s ease;
+
+}
+
+
+/* ===========================
+   Glass Effect
+=========================== */
+
+.glass{
+
+    backdrop-filter:blur(14px);
+
+    background:rgba(255,255,255,.65);
+
+    border:1px solid rgba(255,255,255,.3);
+
+}
+
+
+/* ===========================
+   Notification Badge
+=========================== */
+
+.notification{
+
+    position:relative;
+
+}
+
+.notification::after{
+
+    content:"3";
+
+    position:absolute;
+
+    top:-4px;
+    right:-4px;
+
+    width:20px;
+    height:20px;
+
+    border-radius:50%;
+
+    background:var(--danger);
+
+    color:white;
+
+    font-size:11px;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+}
+
+
+/* ===========================
+   Toast
+=========================== */
+
+.toast{
+
+    position:fixed;
+
+    bottom:25px;
+    right:25px;
+
+    background:#111827;
+
+    color:white;
+
+    padding:18px 24px;
+
+    border-radius:14px;
+
+    box-shadow:0 15px 35px rgba(0,0,0,.2);
+
+    opacity:0;
+
+    pointer-events:none;
+
+    transition:.3s;
+
+    z-index:999;
+
+}
+
+.toast.show{
+
+    opacity:1;
+
+    pointer-events:auto;
+
+}
+
+
+/* ===========================
+   Modal
+=========================== */
+
+.modal{
+
+    position:fixed;
+
+    inset:0;
+
+    background:rgba(0,0,0,.45);
+
+    display:flex;
+
+    justify-content:center;
+    align-items:center;
+
+    opacity:0;
+
+    visibility:hidden;
+
+    transition:.3s;
+
+    z-index:1000;
+
+}
+
+.modal.show{
+
+    opacity:1;
+
+    visibility:visible;
+
+}
+
+.modal-content{
+
+    background:white;
+
+    width:min(90%,500px);
+
+    padding:35px;
+
+    border-radius:20px;
+
+    box-shadow:0 25px 60px rgba(0,0,0,.25);
+
+}
+
+
+/* ===========================
+   Skeleton Loading
+=========================== */
+
+.skeleton{
+
+    background:linear-gradient(
+        90deg,
+        #ececec,
+        #f7f7f7,
+        #ececec
+    );
+
+    background-size:300%;
+
+    animation:skeleton 1.5s infinite;
+
+    border-radius:10px;
+
+}
+
+@keyframes skeleton{
+
+    from{
+
+        background-position:100%;
+
+    }
+
+    to{
+
+        background-position:-100%;
+
+    }
+
+}
+
+
+/* ===========================
+   Image Hover
+=========================== */
+
+img{
+
+    transition:.35s;
+
+}
+
+.court-card:hover img{
+
+    transform:scale(1.06);
+
+}
+
+
+/* ===========================
+   Hover Shadows
+=========================== */
+
+button:hover,
+.card:hover,
+.panel:hover,
+.court-card:hover{
+
+    box-shadow:
+        0 20px 45px rgba(0,0,0,.14);
+
+}
+
+
+/* ===========================
+   Footer
+=========================== */
+
+.footer{
+
+    text-align:center;
+
+    color:var(--gray);
+
+    padding:25px;
+
+    margin-top:40px;
+
+}
+
+
+/* ===========================
+   Mobile Sidebar
+=========================== */
+
+.menu-btn{
+
+    display:none;
+
+    font-size:24px;
+
+    cursor:pointer;
+
+}
+
+
+/* ===========================
+   Responsive
+=========================== */
+
+@media(max-width:1200px){
+
+.dashboard-grid{
+
+grid-template-columns:1fr;
+
+}
+
+.analytics-grid{
+
+grid-template-columns:1fr;
+
+}
+
+}
+
+
+@media(max-width:992px){
+
+.sidebar{
+
+width:90px;
+
+padding:20px 12px;
+
+}
+
+.sidebar h2{
+
+display:none;
+
+}
+
+.sidebar li a{
+
+justify-content:center;
+
+}
+
+.sidebar li span{
+
+display:none;
+
+}
+
+main{
+
+padding:25px;
+
+}
+
+}
+
+
+@media(max-width:768px){
+
+.container{
+
+flex-direction:column;
+
+}
+
+.sidebar{
+
+position:relative;
+
+width:100%;
+
+height:auto;
+
+}
+
+.sidebar ul{
+
+flex-direction:row;
+
+overflow:auto;
+
+}
+
+.topbar{
+
+flex-direction:column;
+
+align-items:stretch;
+
+}
+
+.search{
+
+width:100%;
+
+}
+
+.cards{
+
+grid-template-columns:1fr;
+
+}
+
+.court-grid{
+
+grid-template-columns:1fr;
+
+}
+
+.filter-bar{
+
+flex-direction:column;
+
+align-items:stretch;
+
+}
+
+.button-group{
+
+flex-direction:column;
+
+}
+
+.profile span{
+
+display:none;
+
+}
+
+}
+
+
+@media(max-width:600px){
+
+.page-title h1{
+
+font-size:28px;
+
+}
+
+.hero{
+
+padding:25px;
+
+}
+
+.hero h1{
+
+font-size:28px;
+
+}
+
+table{
+
+font-size:13px;
+
+}
+
+button{
+
+width:100%;
+
+}
+
+}
+
+
+/* ===========================
+   Selection
+=========================== */
+
+::selection{
+
+background:var(--primary);
+
+color:white;
+
+}
+
+
+/* ===========================
+   Focus Accessibility
+=========================== */
+
+button:focus,
+input:focus,
+select:focus,
+textarea:focus{
+
+outline:none;
+
+}
+
+
+/* ===========================
+   Smooth Hover
+=========================== */
+
+button,
+.card,
+.panel,
+.court-card,
+.sidebar li a,
+.profile,
+.booking-item{
+
+transition:all .3s ease;
+
+}
+
+
+/* ===========================
+   End of File
+=========================== */

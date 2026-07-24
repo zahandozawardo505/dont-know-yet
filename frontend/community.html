@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Join community sports matches near you or host your own. Find teammates across football, tennis, padel, basketball and more on PlayZone."/>
+  <title>PlayZone | Community Matches</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="./css/main style.css"/>
+</head>
+<body class="bg-page-bg text-ink font-sans">
+
+  <!-- ===== HEADER ===== -->
+  <header class="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-md border-b border-white/30 shadow-sm">
+    <div class="flex justify-between items-center px-16 max-w-content mx-auto h-20">
+      <a class="text-2xl font-extrabold text-accent" href="./index.html">PlayZone</a>
+      <nav class="hidden md:flex gap-8 items-center" aria-label="Main navigation">
+        <a class="text-ink-muted hover:text-accent transition-colors text-sm" href="./index.html">Venues</a>
+        <a class="text-ink-muted hover:text-accent transition-colors text-sm" href="#">Leagues</a>
+        <a class="text-accent font-bold border-b-2 border-accent pb-1 text-sm" href="./community.html">Community</a>
+      </nav>
+      <div class="flex items-center gap-3">
+        <a class="text-ink-muted hover:text-accent transition-colors text-sm font-semibold px-4 py-2" href="./login.html">Login</a>
+        <a class="bg-black text-white hover:opacity-90 hover:scale-[1.02] transition-all duration-200 px-6 py-2 rounded-lg text-sm font-semibold" href="./signup.html">Sign Up</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ===== HERO ===== -->
+    <section class="relative min-h-[480px] w-full overflow-hidden flex items-center justify-center bg-black" id="hero">
+      <div class="community-hero-bg absolute inset-0 z-0 bg-gray-900"></div>
+      <div class="absolute inset-0 z-10 bg-black/65"></div>
+      <div class="relative z-20 flex flex-col items-center text-center px-5 py-20">
+        <span class="material-symbols-outlined text-white mb-6" style="font-size:72px;">groups</span>
+        <h1 class="text-4xl md:text-6xl font-extrabold text-white mb-4">Community Matches</h1>
+        <p class="text-lg text-white/90 max-w-2xl mb-10">
+          No team? No problem. Find open matches near you, join a game, and meet athletes who share your passion.
+        </p>
+        <!-- Quick search bar -->
+        <form action="#" class="flex flex-col sm:flex-row gap-3 w-full max-w-xl" id="hero-search-form" method="get">
+          <input class="flex-1 px-5 py-3 rounded-lg text-sm text-ink focus:outline-none focus:ring-2 focus:ring-accent" id="hero-search-input" name="q" placeholder="Search by sport, court or city..." type="text"/>
+          <button class="bg-accent text-white px-8 py-3 rounded-lg text-sm font-semibold hover:opacity-90 transition-all whitespace-nowrap" type="submit">Find Matches</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- ===== FILTER BAR ===== -->
+    <section class="py-8 bg-page-alt border-b border-line/20" id="filters">
+      <div class="max-w-content mx-auto px-16">
+        <form action="#" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4" id="community-filter-form" method="get">
+
+          <div class="flex flex-col gap-1">
+            <label class="text-xs font-semibold text-ink-muted uppercase tracking-wide" for="filter-sport">Sport</label>
+            <select class="border border-line rounded-lg px-4 py-3 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-accent" id="filter-sport" name="sport">
+              <option value="">All Sports</option>
+              <option value="football">Football</option>
+              <option value="tennis">Tennis</option>
+              <option value="padel">Padel</option>
+              <option value="basketball">Basketball</option>
+              <option value="volleyball">Volleyball</option>
+              <option value="badminton">Badminton</option>
+            </select>
+          </div>
+
+          <div class="flex flex-col gap-1">
+            <label class="text-xs font-semibold text-ink-muted uppercase tracking-wide" for="filter-skill">Skill Level</label>
+            <select class="border border-line rounded-lg px-4 py-3 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-accent" id="filter-skill" name="skill">
+              <option value="">All Levels</option>
+              <option value="beginner">Beginner Friendly</option>
+              <option value="intermediate">Intermediate</option>
+              <option value="advanced">Advanced</option>
+            </select>
+          </div>
+
+          <div class="flex flex-col gap-1">
+            <label class="text-xs font-semibold text-ink-muted uppercase tracking-wide" for="filter-location">Location</label>
+            <input class="border border-line rounded-lg px-4 py-3 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-accent" id="filter-location" name="location" placeholder="City or area..." type="text"/>
+          </div>
+
+          <div class="flex flex-col gap-1">
+            <label class="text-xs font-semibold text-ink-muted uppercase tracking-wide" for="filter-date">Date</label>
+            <input class="border border-line rounded-lg px-4 py-3 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-accent" id="filter-date" name="date" type="date"/>
+          </div>
+
+          <div class="flex flex-col gap-1 justify-end">
+            <label class="text-xs font-semibold text-ink-muted uppercase tracking-wide opacity-0" aria-hidden="true">Apply</label>
+            <button class="bg-accent text-white px-6 py-3 rounded-lg text-sm font-semibold hover:opacity-90 transition-all w-full" type="submit">
+              <span class="material-symbols-outlined text-[18px] align-middle mr-1">filter_list</span> Apply Filters
+            </button>
+          </div>
+
+        </form>
+      </div>
+    </section>
+
+    <!-- ===== MATCH GRID ===== -->
+    <section class="py-24 px-16 max-w-content mx-auto" id="matches">
+      <div class="flex justify-between items-end mb-12">
+        <div>
+          <h2 class="text-3xl font-bold">Open Matches Near You</h2>
+          <p class="text-ink-muted mt-1">All sports · All levels · Updated live</p>
+        </div>
+        <span class="text-xs text-ink-muted">Showing 6 of 48 matches</span>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+        <!-- Match Card 1 -->
+        <div class="glass-card p-6 rounded-xl hover:shadow-lg transition-all" id="match-1">
+          <div class="flex justify-between items-start mb-4">
+            <div class="bg-accent/10 text-accent px-3 py-1 rounded-md text-xs font-semibold">Football</div>
+            <div class="text-ink-muted text-xs">Oct 24 • 18:00</div>
+          </div>
+          <h3 class="text-xl font-bold mb-1">Dubai Sports City Clash</h3>
+          <p class="text-ink-muted text-sm mb-1 flex items-center gap-1">
+            <span class="material-symbols-outlined text-[16px]">location_on</span> Green Zone 5-a-Side, Dubai
+          </p>
+          <p class="text-ink-muted text-sm mb-4">
+            <span class="font-medium text-ink">Host:</span> Ahmed K.
+          </p>
+          <div class="flex items-center gap-3 mb-4">
+            <span class="text-xs bg-page-alt text-ink-muted px-3 py-1 rounded-full">Intermediate</span>
+            <span class="text-xs bg-page-alt text-ink-muted px-3 py-1 rounded-full">7/10 players</span>
+          </div>
+          <div class="flex -space-x-3 mb-6">
+            <div class="w-9 h-9 rounded-full border-2 border-white bg-slate-200 flex items-center justify-center text-xs font-bold">JD</div>
+            <div class="w-9 h-9 rounded-full border-2 border-white bg-slate-300 flex items-center justify-center text-xs font-bold">AK</div>
+            <div class="w-9 h-9 rounded-full border-2 border-white bg-slate-400 flex items-center justify-center text-xs font-bold">MS</div>
+            <div class="w-9 h-9 rounded-full border-2 border-white bg-accent/20 text-accent flex items-center justify-center text-xs font-bold">+4</div>
+          </div>
+          <div class="flex items-center justify-between pt-4 border-t border-line/20">
+            <span class="text-ink-muted text-xs italic">3 spots left</span>
+            <button class="bg-accent text-white px-5 py-2 rounded-lg text-sm font-semibold hover:scale-[1.03] transition-all" type="button">Join Match</button>
+          </div>
+        </div>
+
+        <!-- Match Card 2 -->
+        <div class="glass-card p-6 rounded-xl hover:shadow-lg transition-all" id="match-2">
+          <div class="flex justify-between items-start mb-4">
+            <div class="bg-accent/10 text-accent px-3 py-1 rounded-md text-xs font-semibold">Tennis</div>
+            <div class="text-ink-muted text-xs">Oct 25 • 09:00</div>
+          </div>
+          <h3 class="text-xl font-bold mb-1">Morning Singles Rally</h3>
+          <p class="text-ink-muted text-sm mb-1 flex items-center gap-1">
+            <span class="material-symbols-outlined text-[16px]">location_on</span> Ace Tennis Club, NYC
+          </p>
+          <p class="text-ink-muted text-sm mb-4">
+            <span class="font-medium text-ink">Host:</span> Rachel L.
+          </p>
+          <div class="flex items-center gap-3 mb-4">
+            <span class="text-xs bg-page-alt text-ink-muted px-3 py-1 rounded-full">Advanced</span>
+            <span class="text-xs bg-page-alt text-ink-muted px-3 py-1 rounded-full">1/2 players</span>
+          </div>
+          <div class="flex -space-x-3 mb-6">
+            <div class="w-9 h-9 rounded-full border-2 border-white bg-slate-200 flex items-center justify-center text-xs font-bold">RL</div>
+            <div class="w-9 h-9 rounded-full border-2 border-white bg-accent/20 text-accent flex items-center justify-center text-xs font-bold">+1</div>
+          </div>
+          <div class="flex items-center justify-between pt-4 border-t border-line/20">
+            <span class="text-ink-muted text-xs italic">1 spot left</span>
+            <button class="bg-accent text-white px-5 py-2 rounded-lg text-sm font-semibold hover:scale-[1.03] transition-all" type="button">Join Match</button>
+          </div>
+        </div>
+
+        <!-- Match Card 3 -->
+        <div class="glass-card p-6 rounded-xl hover:shadow-lg transition-all" id="match-3">
+          <div class="flex justify-between items-start mb-4">
+            <div class="bg-accent/10 text-accent px-3 py-1 rounded-md text-xs font-semibold">Basketball</div>
+            <div class="text-ink-muted text-xs">Oct 25 • 20:30</div>
+          </div>
+          <h3 class="text-xl font-bold mb-1">Friday Night Pick-Up</h3>
+          <p class="text-ink-muted text-sm mb-1 flex items-center gap-1">
+            <span class="material-symbols-outlined text-[16px]">location_on</span> Hardwood Central, Chicago
+          </p>
+          <p class="text-ink-muted text-sm mb-4">
+            <span class="font-medium text-ink">Host:</span> Marcus J.
+          </p>
+          <div class="flex items-center gap-3 mb-4">
+            <span class="text-xs bg-page-alt text-ink-muted px-3 py-1 rounded-full">Beginner Friendly</span>
+            <span class="text-xs bg-page-alt text-ink-muted px-3 py-1 rounded-full">5/10 players</span>
+          </div>
+          <div class="flex -space-x-3 mb-6">
+            <div class="w-9 h-9 rounded-full border-2 border-white bg-slate-200 flex items-center justify-center text-xs font-bold">BK</div>
+            <div class="w-9 h-9 rounded-full border-2 border-white bg-slate-300 flex items-center justify-center text-xs font-bold">TH</div>
+            <div class="w-9 h-9 rounded-full border-2 border-white bg-accent/20 text-accent flex items-center justify-center text-xs font-bold">+3</div>
+          </div>
+          <div class="flex items-center justify-between pt-4 border-t border-line/20">
+            <span class="text-ink-muted text-xs italic">5 spots left</span>
+            <button class="bg-accent text-white px-5 py-2 rounded-lg text-sm font-semibold hover:scale-[1.03] transition-all" type="button">Join Match</button>
+          </div>
+        </div>
+
+        <!-- Match Card 4 -->
+        <div class="glass-card p-6 rounded-xl hover:shadow-lg transition-all" id="match-4">
+          <div class="flex justify-between items-start mb-4">
+            <div class="bg-accent/10 text-accent px-3 py-1 rounded-md text-xs font-semibold">Padel</div>
+            <div class="text-ink-muted text-xs">Oct 26 • 10:00</div>
+          </div>
+          <h3 class="text-xl font-bold mb-1">Mixed Doubles Liga</h3>
+          <p class="text-ink-muted text-sm mb-1 flex items-center gap-1">
+            <span class="material-symbols-outlined text-[16px]">location_on</span> Urban Padel Hub, Madrid
+          </p>
+          <p class="text-ink-muted text-sm mb-4">
+            <span class="font-medium text-ink">Host:</span> Carlos A.
+          </p>
+          <div class="flex items-center gap-3 mb-4">
+            <span class="text-xs bg-page-alt text-ink-muted px-3 py-1 rounded-full">Advanced</span>
+            <span class="text-xs bg-page-alt text-ink-muted px-3 py-1 rounded-full">3/4 players</span>
+          </div>
+          <div class="flex -space-x-3 mb-6">
+            <div class="w-9 h-9 rounded-full border-2 border-white bg-slate-200 flex items-center justify-center text-xs font-bold">AL</div>
+            <div class="w-9 h-9 rounded-full border-2 border-white bg-slate-300 flex items-center justify-center text-xs font-bold">MR</div>
+            <div class="w-9 h-9 rounded-full border-2 border-white bg-accent/20 text-accent flex items-center justify-center text-xs font-bold">+1</div>
+          </div>
+          <div class="flex items-center justify-between pt-4 border-t border-line/20">
+            <span class="text-ink-muted text-xs italic">1 spot left</span>
+            <button class="bg-accent text-white px-5 py-2 rounded-lg text-sm font-semibold hover:scale-[1.03] transition-all" type="button">Join Match</button>
+          </div>
+        </div>
+
+        <!-- Match Card 5 -->
+        <div class="glass-card p-6 rounded-xl hover:shadow-lg transition-all" id="match-5">
+          <div class="flex justify-between items-start mb-4">
+            <div class="bg-accent/10 text-accent px-3 py-1 rounded-md text-xs font-semibold">Volleyball</div>
+            <div class="text-ink-muted text-xs">Oct 27 • 15:00</div>
+          </div>
+          <h3 class="text-xl font-bold mb-1">Sunset Beach Casual</h3>
+          <p class="text-ink-muted text-sm mb-1 flex items-center gap-1">
+            <span class="material-symbols-outlined text-[16px]">location_on</span> Beach Volley Cove, Miami
+          </p>
+          <p class="text-ink-muted text-sm mb-4">
+            <span class="font-medium text-ink">Host:</span> Sofia L.
+          </p>
+          <div class="flex items-center gap-3 mb-4">
+            <span class="text-xs bg-page-alt text-ink-muted px-3 py-1 rounded-full">Beginner Friendly</span>
+            <span class="text-xs bg-page-alt text-ink-muted px-3 py-1 rounded-full">4/8 players</span>
+          </div>
+          <div class="flex -space-x-3 mb-6">
+            <div class="w-9 h-9 rounded-full border-2 border-white bg-slate-200 flex items-center justify-center text-xs font-bold">SL</div>
+            <div class="w-9 h-9 rounded-full border-2 border-white bg-slate-300 flex items-center justify-center text-xs font-bold">PK</div>
+            <div class="w-9 h-9 rounded-full border-2 border-white bg-accent/20 text-accent flex items-center justify-center text-xs font-bold">+2</div>
+          </div>
+          <div class="flex items-center justify-between pt-4 border-t border-line/20">
+            <span class="text-ink-muted text-xs italic">4 spots left</span>
+            <button class="bg-accent text-white px-5 py-2 rounded-lg text-sm font-semibold hover:scale-[1.03] transition-all" type="button">Join Match</button>
+          </div>
+        </div>
+
+        <!-- Match Card 6 -->
+        <div class="glass-card p-6 rounded-xl hover:shadow-lg transition-all" id="match-6">
+          <div class="flex justify-between items-start mb-4">
+            <div class="bg-accent/10 text-accent px-3 py-1 rounded-md text-xs font-semibold">Badminton</div>
+            <div class="text-ink-muted text-xs">Oct 28 • 07:30</div>
+          </div>
+          <h3 class="text-xl font-bold mb-1">Morning Doubles Session</h3>
+          <p class="text-ink-muted text-sm mb-1 flex items-center gap-1">
+            <span class="material-symbols-outlined text-[16px]">location_on</span> Rally Badminton Club, Singapore
+          </p>
+          <p class="text-ink-muted text-sm mb-4">
+            <span class="font-medium text-ink">Host:</span> Lee W.
+          </p>
+          <div class="flex items-center gap-3 mb-4">
+            <span class="text-xs bg-page-alt text-ink-muted px-3 py-1 rounded-full">Intermediate</span>
+            <span class="text-xs bg-page-alt text-ink-muted px-3 py-1 rounded-full">2/4 players</span>
+          </div>
+          <div class="flex -space-x-3 mb-6">
+            <div class="w-9 h-9 rounded-full border-2 border-white bg-slate-200 flex items-center justify-center text-xs font-bold">LW</div>
+            <div class="w-9 h-9 rounded-full border-2 border-white bg-slate-300 flex items-center justify-center text-xs font-bold">CJ</div>
+            <div class="w-9 h-9 rounded-full border-2 border-white bg-accent/20 text-accent flex items-center justify-center text-xs font-bold">+2</div>
+          </div>
+          <div class="flex items-center justify-between pt-4 border-t border-line/20">
+            <span class="text-ink-muted text-xs italic">2 spots left</span>
+            <button class="bg-accent text-white px-5 py-2 rounded-lg text-sm font-semibold hover:scale-[1.03] transition-all" type="button">Join Match</button>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Load More -->
+      <div class="text-center mt-12">
+        <button class="border border-line-strong text-ink px-10 py-3 rounded-lg text-sm font-semibold hover:bg-black hover:text-white transition-all duration-200" id="load-more-matches" type="button">Load More Matches</button>
+      </div>
+    </section>
+
+    <!-- ===== CREATE A MATCH CTA ===== -->
+    <section class="py-24 bg-black text-white text-center" id="create-match">
+      <div class="max-w-content mx-auto px-16">
+        <span class="material-symbols-outlined text-accent mb-6 block" style="font-size:64px;">add_circle</span>
+        <h2 class="text-4xl md:text-5xl font-extrabold mb-4">Host Your Own Match</h2>
+        <p class="text-white/80 text-lg max-w-xl mx-auto mb-10">
+          Can't find the right game? Create your own match, set the sport, skill level and time — and let the community come to you.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <button class="bg-accent text-white px-12 py-4 rounded-lg text-xl font-bold hover:scale-[1.05] transition-all duration-300" id="create-match-btn" type="button">
+            Create a Match
+          </button>
+          <a class="border-2 border-white text-white px-12 py-4 rounded-lg text-xl font-bold hover:bg-white/10 transition-all" href="#">Learn How It Works</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="bg-surface-muted w-full pt-16 pb-8 border-t border-line/30">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-6 px-16 max-w-content mx-auto">
+      <div class="flex flex-col gap-2">
+        <a class="text-xl font-bold text-black" href="./index.html">PlayZone</a>
+        <p class="text-xs text-ink-muted max-w-[200px]">The premium sports concierge service for modern urban athletes.</p>
+      </div>
+      <div class="flex flex-col gap-4">
+        <h5 class="text-sm font-semibold uppercase text-black">Platform</h5>
+        <nav class="flex flex-col gap-2" aria-label="Platform links">
+          <a class="text-xs text-ink-muted hover:text-black transition-colors" href="./index.html">Venues</a>
+          <a class="text-xs text-ink-muted hover:text-black transition-colors" href="#">Leagues</a>
+          <a class="text-xs text-ink-muted hover:text-black transition-colors" href="./community.html">Community</a>
+          <a class="text-xs text-ink-muted hover:text-black transition-colors" href="#">Partner with Us</a>
+        </nav>
+      </div>
+      <div class="flex flex-col gap-4">
+        <h5 class="text-sm font-semibold uppercase text-black">Support</h5>
+        <nav class="flex flex-col gap-2" aria-label="Support links">
+          <a class="text-xs text-ink-muted hover:text-black transition-colors" href="#">Help Center</a>
+          <a class="text-xs text-ink-muted hover:text-black transition-colors" href="#">Privacy Policy</a>
+          <a class="text-xs text-ink-muted hover:text-black transition-colors" href="#">Terms of Service</a>
+        </nav>
+      </div>
+      <div class="flex flex-col gap-4">
+        <h5 class="text-sm font-semibold uppercase text-black">Connect</h5>
+        <div class="flex gap-4">
+          <a class="text-ink-muted hover:text-accent" href="#" aria-label="Share"><span class="material-symbols-outlined">share</span></a>
+          <a class="text-ink-muted hover:text-accent" href="#" aria-label="Email"><span class="material-symbols-outlined">mail</span></a>
+        </div>
+      </div>
+    </div>
+    <div class="max-w-content mx-auto px-16 mt-16 pt-8 border-t border-line/10 text-center">
+      <p class="text-xs text-ink-muted">© 2024 PlayZone Concierge. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="./js/mainpage.js"></script>
+</body>
+</html>

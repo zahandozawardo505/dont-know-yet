@@ -1,0 +1,89 @@
+/* ============================================================
+   themes.css — PlayZone Sport Themes
+   Sport-specific color overrides via body class.
+   NEVER hardcode colors in components — always read from here.
+   ============================================================ */
+
+/* ── DEFAULT theme (homepage, admin, community) ───────────── */
+body,
+body.default {
+  --color-accent:       hsl(217, 91%, 45%);
+  --color-accent-hover: hsl(217, 91%, 38%);
+  --color-accent-soft:  hsl(217, 91%, 90%);
+  --color-accent-muted: hsl(217, 60%, 95%);
+  --sport-hero-gradient: linear-gradient(135deg, hsl(217,91%,20%) 0%, hsl(210,100%,10%) 100%);
+  --sport-hero-overlay:  rgba(0, 10, 40, 0.65);
+}
+
+/* ── FOOTBALL theme — turf green ─────────────────────────── */
+body.football {
+  --color-accent:       hsl(142, 60%, 38%);
+  --color-accent-hover: hsl(142, 60%, 30%);
+  --color-accent-soft:  hsl(142, 60%, 88%);
+  --color-accent-muted: hsl(142, 40%, 95%);
+  --sport-hero-gradient: linear-gradient(135deg, hsl(142,60%,14%) 0%, hsl(160,50%,8%) 100%);
+  --sport-hero-overlay:  rgba(0, 30, 10, 0.62);
+}
+
+/* ── TENNIS theme — white + lime green ───────────────────── */
+body.tennis {
+  --color-accent:       hsl(77, 70%, 40%);
+  --color-accent-hover: hsl(77, 70%, 33%);
+  --color-accent-soft:  hsl(77, 70%, 88%);
+  --color-accent-muted: hsl(77, 50%, 95%);
+  --sport-hero-gradient: linear-gradient(135deg, hsl(77,50%,12%) 0%, hsl(60,40%,8%) 100%);
+  --sport-hero-overlay:  rgba(10, 25, 0, 0.62);
+}
+
+/* ── PADEL theme — modern blue (glass courts) ────────────── */
+body.padel {
+  --color-accent:       hsl(200, 85%, 42%);
+  --color-accent-hover: hsl(200, 85%, 34%);
+  --color-accent-soft:  hsl(200, 85%, 88%);
+  --color-accent-muted: hsl(200, 60%, 95%);
+  --sport-hero-gradient: linear-gradient(135deg, hsl(200,85%,14%) 0%, hsl(215,90%,8%) 100%);
+  --sport-hero-overlay:  rgba(0, 20, 40, 0.62);
+}
+
+/* ── BASKETBALL theme — hardwood orange ──────────────────── */
+body.basketball {
+  --color-accent:       hsl(25, 90%, 48%);
+  --color-accent-hover: hsl(25, 90%, 40%);
+  --color-accent-soft:  hsl(25, 90%, 90%);
+  --color-accent-muted: hsl(25, 60%, 95%);
+  --sport-hero-gradient: linear-gradient(135deg, hsl(25,90%,18%) 0%, hsl(10,80%,10%) 100%);
+  --sport-hero-overlay:  rgba(40, 12, 0, 0.62);
+}
+
+/* ── VOLLEYBALL theme — sand + sky blue ──────────────────── */
+body.volleyball {
+  --color-accent:       hsl(196, 80%, 42%);
+  --color-accent-hover: hsl(196, 80%, 34%);
+  --color-accent-soft:  hsl(196, 80%, 88%);
+  --color-accent-muted: hsl(45, 60%, 95%);
+  --sport-hero-gradient: linear-gradient(135deg, hsl(196,80%,15%) 0%, hsl(45,50%,12%) 100%);
+  --sport-hero-overlay:  rgba(0, 20, 35, 0.62);
+}
+
+/* ── BADMINTON theme — modern indoor purple ──────────────── */
+body.badminton {
+  --color-accent:       hsl(265, 70%, 52%);
+  --color-accent-hover: hsl(265, 70%, 44%);
+  --color-accent-soft:  hsl(265, 70%, 90%);
+  --color-accent-muted: hsl(265, 50%, 96%);
+  --sport-hero-gradient: linear-gradient(135deg, hsl(265,70%,16%) 0%, hsl(245,60%,8%) 100%);
+  --sport-hero-overlay:  rgba(20, 5, 40, 0.62);
+}
+
+/* ── Sport hero background (dynamic background) ───────────── */
+.sport-hero-bg {
+  background: var(--sport-hero-gradient, linear-gradient(135deg, hsl(217,91%,14%) 0%, hsl(215,100%,6%) 100%));
+  background-size: cover;
+  background-position: center;
+}
+
+/* ── Theme-aware color utilities (accent only) ────────────── */
+.text-sport-accent   { color: var(--color-accent); }
+.bg-sport-accent     { background-color: var(--color-accent); }
+.border-sport-accent { border-color: var(--color-accent); }
+.bg-sport-muted      { background-color: var(--color-accent-muted); }
